@@ -4,8 +4,12 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'lyu',
+    url: 'https://www.yourdomain.tld',
+    title: 'Lyu Azbel',
+    description: '',
+    license: '',
+    navigation: ['about', 'publications', 'projects'],
+    links: [{ name: 'Email', href: 'https://www.yourdomain.tld' }],
   },
   plugins: [
     {
@@ -15,14 +19,14 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-transformer-remark',
