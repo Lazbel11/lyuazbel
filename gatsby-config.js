@@ -6,10 +6,12 @@ module.exports = {
   siteMetadata: {
     url: 'https://www.yourdomain.tld',
     title: 'Lyu Azbel',
+    titleTemplate: '%s · Public Health Researcher',
     description: '',
-    license: '',
     navigation: ['about', 'publications', 'projects'],
     links: [{ name: 'Email', href: 'https://www.yourdomain.tld' }],
+    image: '/favicon.png', // image placed in the static folder
+    license: '',
   },
   plugins: [
     {
@@ -17,6 +19,12 @@ module.exports = {
       options: {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/config/typography`,
       },
     },
     'gatsby-plugin-image',
