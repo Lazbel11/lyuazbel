@@ -2,11 +2,11 @@ import Typography from 'typography';
 
 // @ts-ignore
 const typography = new Typography({
-  baseFontSize: '2rem',
+  baseFontSize: '14px',
   baseLineHeight: 1.666,
   headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
   bodyFontFamily: ['Georgia', 'serif'],
-  scaleRatio: 3,
+  scaleRatio: 2,
   googleFonts: [
     {
       name: 'Montserrat',
@@ -17,12 +17,11 @@ const typography = new Typography({
       styles: ['400', '400i', '700', '700i'],
     },
   ],
-  headerWeight: 500,
+  headerWeight: 300,
   bodyWeight: 400,
   boldWeight: 600,
   blockMarginBottom: '1rem',
 });
 
-// Export helper functions
 export const { scale, rhythm, options } = typography;
 export default typography;

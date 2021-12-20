@@ -9,7 +9,7 @@ import { SiteMetadata } from 'types';
 type Props = {
   children: React.ReactNode;
   siteData: SiteMetadata;
-  seo: SEOProps;
+  seo?: SEOProps;
 };
 
 export default function Layout({ children, siteData, seo }: Props) {

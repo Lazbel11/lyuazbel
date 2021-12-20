@@ -6,9 +6,9 @@ import typography from '../config/typography';
 import { TypographyStyle, GoogleFont } from 'react-typography';
 
 export type SEOProps = {
-  title: string;
-  description: string;
-  image: string;
+  title?: string;
+  description?: string;
+  image?: string;
 };
 
 const SEO = ({ title, description, image }: SEOProps) => {
