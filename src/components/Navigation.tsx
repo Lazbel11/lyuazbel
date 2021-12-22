@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavbarBrand } from 'reactstrap';
+import { mapNavigationToUrl } from '../config';
 
 export default function Navigation({ links }) {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Navigation({ links }) {
                   {link}
                 </Link>
               ) : (
-                <Link to={'#' + link} activeClassName='active' className='nav-link'>
+                <Link to={mapNavigationToUrl[link]} activeClassName='active' className='nav-link'>
                   {link}
                 </Link>
               )}
