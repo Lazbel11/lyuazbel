@@ -4,16 +4,17 @@ import Footer from './Footer';
 
 import '../styles/main.scss';
 import SEO, { SEOProps } from './SEO';
-import { SiteMetadata } from 'types';
+import { graphql, useStaticQuery } from 'gatsby';
 
 type Props = {
   children: React.ReactNode;
-  siteData: SiteMetadata;
   seo?: SEOProps;
 };
 
-export default function Layout({ children, siteData, seo }: Props) {
-  const { navigation, title, license, links } = siteData;
+export default function Layout({ children, seo }: Props) {
+  const { site } = useStaticQuery(query);
+  const { navigation, title, license, links } = site.siteMetadata;
+
   return (
     <div className='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
@@ -28,3 +29,19 @@ export default function Layout({ children, siteData, seo }: Props) {
     </div>
   );
 }
+
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        navigation
+        license
+        links {
+          name
+          href
+        }
+      }
+    }
+  }
+`;

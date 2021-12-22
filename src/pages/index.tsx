@@ -4,30 +4,19 @@ import Layout from '../components/Layout';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 export default function Index({ data }) {
-  const { site, about } = data;
+  const { allContentfulAbout } = data;
+  const [about] = allContentfulAbout.edges.map(({ node }) => node);
 
-  const [bla] = about.edges.map(({ node }) => node);
   return (
-    <Layout siteData={site.siteMetadata}>
-      <section id='about'>{renderRichText(bla.bio)}</section>
+    <Layout>
+      <section id='about'>{renderRichText(about.bio)}</section>
     </Layout>
   );
 }
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        license
-        navigation
-        links {
-          name
-          href
-        }
-      }
-    }
-    about: allContentfulAbout {
+    allContentfulAbout {
       edges {
         node {
           bio {
