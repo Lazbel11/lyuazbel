@@ -1,5 +1,5 @@
 {
-  "name": "lyu",
+  "name": "lyuazbel",
   "version": "1.0.0",
   "private": true,
   "description": "lyu",
@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "export NODE_OPTIONS=--openssl-legacy-provider; gatsby develop",
+    "develop": "gatsby develop -p 3000",
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
