@@ -18,11 +18,8 @@ export default function Layout({ children, seo }: Props) {
   return (
     <div className='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
-      <div className='header'>
-        <h1 className='title'>{title}</h1>
-      </div>
       <div className='flex'>
-        <Navigation links={navigation} />
+        <Navigation brand={title} links={navigation} />
         <main className='content'>{children}</main>
       </div>
       <Footer title={title} />
