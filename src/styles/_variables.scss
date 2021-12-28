@@ -1,4 +1,26 @@
 @use 'sass:map';
 
-$footer-lg-height: map-get($spacers, 5);
-$footer-height: calc(#{$footer-lg-height} + 1rem);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1900px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1720px,
+);
+
+// estimated from current setup in main.scss & Navigation.tsx
+$navigation-height: $spacer * 3.39;
+
+$footer-md-height: map-get($spacers, 5);
+$footer-height: $footer-md-height + 1rem;

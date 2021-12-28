@@ -1,6 +1,9 @@
 @import '~bootstrap/scss/bootstrap-utilities.scss';
-@import '~bootstrap/scss/_root.scss';
-@import '~bootstrap/scss/_reboot.scss';
-@import '~bootstrap/scss/_type.scss';
-@import '~bootstrap/scss/_grid.scss';
-@import '~bootstrap/scss/_navbar.scss';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/vendor/rfs';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/transitions';

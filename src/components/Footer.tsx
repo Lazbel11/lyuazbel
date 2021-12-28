@@ -5,7 +5,7 @@ export default function Footer({ title }) {
   return (
     <footer
       id='footer'
-      className='d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center'
+      className='d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center py-0 px-3'
     >
       <div className='legal'>
         <nav className='d-inline'>

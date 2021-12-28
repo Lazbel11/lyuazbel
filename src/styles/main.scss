@@ -2,22 +2,41 @@
 @import 'variables';
 
 #layout {
-  min-height: 100vh;
-  padding-bottom: $footer-height;
+  #navigation {
+    // circumvent reactstrap default behaviour of adding a container
+    > .container-fluid {
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-width: 200px;
+    }
+
+    .navbar-toggler {
+      top: $spacer * 0.25;
+      right: 0;
+    }
+  }
 
   #content {
+    min-height: 100vh;
+    padding-bottom: $footer-height !important;
+
+    @include media-breakpoint-up(lg) {
+      min-height: 100vh;
+      padding-bottom: $footer-md-height !important;
+    }
   }
 
   #footer {
-    padding: 0 map-get($spacers, 4);
     width: 100%;
     height: $footer-height;
     position: absolute;
     bottom: 0;
     left: 0;
 
-    @include media-breakpoint-up(lg) {
-      height: $footer-lg-height;
+    @include media-breakpoint-up(md) {
+      height: $footer-md-height;
     }
   }
 }

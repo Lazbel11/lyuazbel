@@ -9,7 +9,7 @@ export default function Index({ data }) {
 
   return (
     <Layout>
-      <section id='about'>{renderRichText(about.bio)}</section>
+      <article id='about'>{renderRichText(about.bio)}</article>
     </Layout>
   );
 }
