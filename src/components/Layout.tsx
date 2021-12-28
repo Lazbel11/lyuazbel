@@ -1,10 +1,10 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import SEO, { SEOProps } from './SEO';
 
 import '../styles/main.scss';
-import SEO, { SEOProps } from './SEO';
-import { graphql, useStaticQuery } from 'gatsby';
 
 type Props = {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export default function Layout({ children, seo }: Props) {
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
       <div className='flex'>
         <Navigation brand={title} links={navigation} />
-        <main className='content'>{children}</main>
+        <main id='content'>{children}</main>
       </div>
       <Footer title={title} />
     </div>
