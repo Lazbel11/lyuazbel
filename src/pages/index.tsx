@@ -22,7 +22,6 @@ export const query = graphql`
           bio {
             raw
           }
-          contentful_id
           education {
             raw
           }
