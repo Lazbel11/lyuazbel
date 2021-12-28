@@ -19,15 +19,9 @@ export default function Navigation({ brand, links }) {
           <Nav className='nav-list mx-0' navbar vertical>
             {links.map((link) => (
               <NavItem className='nav-item' key={link}>
-                {link === 'back' ? (
-                  <Link to='/' className='nav-link p-2'>
-                    {link}
-                  </Link>
-                ) : (
-                  <Link to={mapNavigationToUrl[link]} activeClassName='active' className='nav-link p-2'>
-                    {link}
-                  </Link>
-                )}
+                <Link to={mapNavigationToUrl[link]} activeClassName='active' className='nav-link p-2'>
+                  {link}
+                </Link>
               </NavItem>
             ))}
           </Nav>
