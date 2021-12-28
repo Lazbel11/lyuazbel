@@ -25,7 +25,7 @@ const SEO = ({ title, description, image }: SEOProps) => {
   };
 
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet title={seo.title} titleTemplate={title && titleTemplate}>
       <meta name='robots' content='all' />
       <meta name='description' content={seo.description} />
       {seo.image && <meta name='image' content={seo.image} />}

@@ -13,18 +13,18 @@ type Props = {
 
 export default function Layout({ children, seo }: Props) {
   const { site } = useStaticQuery(query);
-  const { navigation, title, license, links } = site.siteMetadata;
+  const { navigation, titleShort, license, links } = site.siteMetadata;
 
   return (
     <div id='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
       <div className='d-flex flex-column flex-lg-row'>
-        <Navigation brand={title} links={navigation} />
+        <Navigation brand={titleShort} links={navigation} />
         <div className='d-inline-block position-relative w-100'>
           <main id='content' className='p-3'>
             {children}
           </main>
-          <Footer title={title} />
+          <Footer title={titleShort} />
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@ const query = graphql`
   query {
     site {
       siteMetadata {
-        title
+        titleShort
         navigation
         license
         links {
