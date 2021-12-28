@@ -16,7 +16,7 @@ export default function Layout({ children, seo }: Props) {
   const { navigation, title, license, links } = site.siteMetadata;
 
   return (
-    <div className='layout'>
+    <div id='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
       <div className='flex'>
         <Navigation brand={title} links={navigation} />

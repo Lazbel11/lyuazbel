@@ -5,7 +5,7 @@ import '../styles/main.scss';
 
 export default function Footer({ title }) {
   return (
-    <footer className='footer'>
+    <footer id='footer'>
       <Link to='/imprint'>Imprint</Link> &middot; <Link to='/privacy-policy'>Privacy Policy</Link> &copy;{' '}
       {new Date().getFullYear()}&nbsp;
       <span className='text-nowrap'>{title}</span>
