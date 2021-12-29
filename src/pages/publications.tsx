@@ -1,26 +1,43 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/Layout';
+import { mapPublicationCategoryIdToTitle } from '../config';
+import { reducePublicationsByCategory, simpleFormatString } from '../helpers';
+
+export type Publication = {
+  title: string;
+  publicationName: string;
+  authors: string[];
+  category: string;
+  date: string;
+  link: string;
+};
 
 export default function Publications({ data }) {
-  const { allContentfulPublication } = data;
-  const publications = allContentfulPublication.edges.map(({ node }) => node);
+  const { edges } = data.allContentfulPublication;
+  const publicationsByCategory = reducePublicationsByCategory(edges.map(({ node }) => node));
+  const sections = Object.keys(publicationsByCategory).sort();
 
   return (
     <Layout seo={{ title: 'Publications' }}>
-      <section id='about'>
-        {publications.map((pub, i) => (
-          <article key={i}>
-            <p>
-              {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
-              <a href={pub.link} about='_blank' rel='noreferrer noopener'>
-                {pub.title}
-              </a>{' '}
-              <em>{pub.publicationName}</em>
-            </p>
-          </article>
+      <article id='publications'>
+        {sections.map((id) => (
+          <section key={id} id={`section-${id}`}>
+            <h3>{mapPublicationCategoryIdToTitle[id]}</h3>
+            {publicationsByCategory[id].map((pub, i) => (
+              <article key={i}>
+                <p>
+                  {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
+                  <a href={pub.link} about='_blank' rel='noreferrer noopener'>
+                    {pub.title}
+                  </a>{' '}
+                  <em>{pub.publicationName}</em>
+                </p>
+              </article>
+            ))}
+          </section>
         ))}
-      </section>
+      </article>
     </Layout>
   );
 }
@@ -33,6 +50,7 @@ export const query = graphql`
           title
           publicationName
           authors
+          category
           date(formatString: "YYYY-MM-DD")
           link
         }
