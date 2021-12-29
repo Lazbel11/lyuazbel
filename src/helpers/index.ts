@@ -5,7 +5,7 @@ export function capitalise(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export function simpleFormatString(title: string, format: 'url' | 'headline' = 'url'): string {
+export function simpleFormatString(title: string, format: 'id' | 'headline' = 'id'): string {
   title = title.trim();
   if (typeof title !== 'string') return title;
   const dash = new RegExp('-', 'g');
@@ -13,7 +13,7 @@ export function simpleFormatString(title: string, format: 'url' | 'headline' = '
   const space = new RegExp(' ', 'g');
   const quotes = new RegExp('"', 'g');
 
-  if (format.toLowerCase() === 'url') {
+  if (format.toLowerCase() === 'id') {
     if (space.test(title)) {
       title = title.replace(space, '-');
     }
@@ -32,7 +32,7 @@ export function simpleFormatString(title: string, format: 'url' | 'headline' = '
       console.log('Nothing to format!');
     }
   } else {
-    console.error("Please provide a format argument, either 'url' or 'headline'");
+    console.error("Please provide a format argument, either 'id' or 'headline'");
   }
   return title;
 }

@@ -9,7 +9,7 @@ module.exports = {
     title: 'Lyu Azbel · Public Health Researcher',
     titleTemplate: '%s · Lyu Azbel',
     description: '',
-    navigation: ['about', 'publications', 'projects'],
+    navigation: ['cv', 'publications', 'projects'],
     links: [{ name: 'Email', href: 'https://www.yourdomain.tld' }],
     image: '/favicon.png', // image placed in the static folder
     license: '',

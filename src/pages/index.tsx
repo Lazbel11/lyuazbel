@@ -22,9 +22,6 @@ export const query = graphql`
           bio {
             raw
           }
-          education {
-            raw
-          }
           portrait {
             gatsbyImageData
           }

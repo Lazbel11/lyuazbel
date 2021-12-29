@@ -1,7 +1,13 @@
 export const mapNavigationToUrl = {
-  about: '/',
+  cv: '/cv',
   publications: '/publications',
   projects: '/projects',
+};
+
+export const mapNavigationToLinkName = {
+  cv: 'Resume',
+  publications: 'Publications',
+  projects: 'Projects',
 };
 
 export const mapPublicationCategoryIdToTitle = {
