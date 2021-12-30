@@ -58,7 +58,7 @@ export function reducePublicationsByCategory(publications: Publication[]) {
   }, {});
 }
 
-// TODO: add html obfuscation
+// todo: add html obfuscation
 type EmbedHtmlAnchorOpts = { targetBlank: boolean; displayStr?: string };
 export function embedHtmlAnchor(href: string, opts: EmbedHtmlAnchorOpts = { targetBlank: true }) {
   const targetStr = "target='_blank' rel='noreferrer noopener'";
