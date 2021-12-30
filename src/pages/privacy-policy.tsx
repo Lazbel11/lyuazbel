@@ -6,9 +6,8 @@ import { embedHtmlAnchor } from '../helpers';
 
 export default function Privacy({ data }) {
   const { content, site } = data;
-  const [privacy] = content.edges.map(({ node }) => node.privacyPolicy.childMarkdownRemark);
   const email = find(site.siteMetadata.links, (link) => link.name.toLowerCase() === 'email');
-  const privacyHtml = privacy.html
+  const privacyHtml = content.childMarkdownRemark.html
     .replace(/\{email\}/gm, embedHtmlAnchor(email.href))
     .replace(/\{siteUrl\}/gm, embedHtmlAnchor(site.siteMetadata.url));
 
@@ -35,15 +34,9 @@ export const query = graphql`
         }
       }
     }
-    content: allContentfulImprintPrivacyPolicy {
-      edges {
-        node {
-          privacyPolicy {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
+    content: contentfulImprintPrivacyPolicyPrivacyPolicyTextNode {
+      childMarkdownRemark {
+        html
       }
     }
   }

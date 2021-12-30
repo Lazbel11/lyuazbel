@@ -1,30 +1,31 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 export default function Index({ data }) {
-  const { allContentfulAbout } = data;
-  const [about] = allContentfulAbout.edges.map(({ node }) => node);
+  const { portrait, bio } = data.contentfulAbout;
 
   return (
     <Layout>
-      <article id='about'>{renderRichText(about.bio)}</article>
+      <article
+        id='about'
+        dangerouslySetInnerHTML={{
+          __html: bio.childMarkdownRemark.html,
+        }}
+      ></article>
     </Layout>
   );
 }
 
 export const query = graphql`
   query {
-    allContentfulAbout {
-      edges {
-        node {
-          bio {
-            raw
-          }
-          portrait {
-            gatsbyImageData
-          }
+    contentfulAbout {
+      portrait {
+        gatsbyImageData
+      }
+      bio: childContentfulAboutBioTextNode {
+        childMarkdownRemark {
+          html
         }
       }
     }
