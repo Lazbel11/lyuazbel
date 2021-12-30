@@ -21,7 +21,12 @@ export default function Projects({ data }) {
               </a>{' '}
             </p>
             <p className={styles.institution}>{project.institution}</p>
-            <p className={styles.description}>{project.description.description}</p>
+            <p
+              className={styles.description}
+              dangerouslySetInnerHTML={{
+                __html: project.description.childMarkdownRemark.html,
+              }}
+            />
           </article>
         ))}
       </section>
@@ -40,7 +45,9 @@ export const query = graphql`
           endDate
           link
           description {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
