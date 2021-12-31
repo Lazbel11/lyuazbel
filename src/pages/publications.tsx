@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { mapPublicationCategoryIdToTitle } from '../config';
+import { mapPublicationCategoryIdToTitle, publicationCategoryIdMap } from '../config';
 import { reducePublicationsByCategory, simpleFormatString } from '../helpers';
 
 export type Publication = {
@@ -17,26 +17,32 @@ export default function Publications({ data }) {
   const { edges } = data.allContentfulPublication;
   const publicationsByCategory = reducePublicationsByCategory(edges.map(({ node }) => node));
   const sections = Object.keys(publicationsByCategory).sort();
+  const { massMedia: massMediaKey } = publicationCategoryIdMap;
 
   return (
     <Layout seo={{ title: 'Publications' }}>
       <article id='publications'>
-        {sections.map((id) => (
-          <section key={id} id={`section-${id}`}>
-            <h3>{mapPublicationCategoryIdToTitle[id]}</h3>
-            {publicationsByCategory[id].map((pub, i) => (
-              <article key={i}>
-                <p>
-                  {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
-                  <a href={pub.link} about='_blank' rel='noreferrer noopener'>
-                    {pub.title}
-                  </a>{' '}
-                  <em>{pub.publicationName}</em>
-                </p>
-              </article>
-            ))}
-          </section>
-        ))}
+        {sections.map((id) => {
+          if (id === massMediaKey && publicationsByCategory[massMediaKey].length < 3) {
+            return <div></div>;
+          }
+          return (
+            <section key={id} id={`section-${id}`}>
+              <h3>{mapPublicationCategoryIdToTitle[id]}</h3>
+              {publicationsByCategory[id].map((pub, i) => (
+                <article key={i}>
+                  <p>
+                    {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
+                    <a href={pub.link} about='_blank' rel='noreferrer noopener'>
+                      {pub.title}
+                    </a>{' '}
+                    <em>{pub.publicationName}</em>
+                  </p>
+                </article>
+              ))}
+            </section>
+          );
+        })}
       </article>
     </Layout>
   );

@@ -10,8 +10,14 @@ export const mapNavigationToLinkName = {
   projects: 'Projects',
 };
 
+export const publicationCategoryIdMap = {
+  selected: '1-selected-peer-reviewed',
+  massMedia: '2-mass-media',
+  bookChapters: '3-book-chapters',
+};
+
 export const mapPublicationCategoryIdToTitle = {
-  '3-book-chapters': 'Book Chapters',
-  '2-mass-media': 'Mass Media',
-  '1-selected-peer-reviewed': 'Selected peer-reviewed Publications',
+  [publicationCategoryIdMap.selected]: 'Selected peer-reviewed Publications',
+  [publicationCategoryIdMap.massMedia]: 'Mass Media',
+  [publicationCategoryIdMap.bookChapters]: 'Book Chapters',
 };
