@@ -11,6 +11,8 @@ export type SEOProps = {
   image?: string;
 };
 
+// todo: best practices for seo https://ahrefs.com/blog/seo-meta-tags/
+
 const SEO = ({ title, description, image }: SEOProps) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
@@ -26,7 +28,6 @@ const SEO = ({ title, description, image }: SEOProps) => {
 
   return (
     <Helmet title={seo.title} titleTemplate={title && titleTemplate}>
-      <meta name='robots' content='all' />
       <meta name='description' content={seo.description} />
       {seo.image && <meta name='image' content={seo.image} />}
 
@@ -34,6 +35,7 @@ const SEO = ({ title, description, image }: SEOProps) => {
       {seo.title && <meta property='og:title' content={seo.title} />}
       {seo.description && <meta property='og:description' content={seo.description} />}
       {seo.image && <meta property='og:image' content={seo.image} />}
+
       <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />
     </Helmet>

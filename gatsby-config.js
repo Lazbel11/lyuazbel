@@ -6,11 +6,11 @@ module.exports = {
   siteMetadata: {
     url: 'https://www.yourdomain.tld',
     titleShort: 'Lyu Azbel',
-    title: 'Lyu Azbel · Public Health Researcher',
+    title: 'Lyu Azbel · Public Health Researcher', // maybe add location info
     titleTemplate: '%s · Lyu Azbel',
-    description: '',
+    description: '', // has to be for each page
     navigation: ['publications', 'projects'],
-    links: [{ name: 'Email', href: 'https://www.yourdomain.tld' }],
+    links: [{ name: 'Email', href: 'lyu.azbel@gmail.com' }],
     image: '/favicon.png', // image placed in the static folder
     license: '',
   },
