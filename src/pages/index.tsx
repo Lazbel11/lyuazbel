@@ -4,6 +4,7 @@ import Obfuscate from 'react-obfuscate';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { find } from 'lodash';
+import { MailIcon } from '@primer/octicons-react';
 
 // todo: add email icon
 
@@ -22,7 +23,7 @@ export default function Index({ data }) {
         ></div>
         <GatsbyImage image={getImage(portrait)!} alt='' />
         <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
-          lalala
+          <MailIcon size={24} />
         </Obfuscate>
       </article>
     </Layout>
