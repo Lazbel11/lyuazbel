@@ -20,11 +20,11 @@ export default function Layout({ children, seo }: Props) {
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
       <div className='d-flex flex-column flex-lg-row'>
         <Navigation brand={titleShort} links={navigation} />
-        <div className='d-inline-block position-relative w-100'>
-          <main id='content' className='p-3'>
+        <div className='d-inline-block w-100'>
+          <main id='content' className='main-thread position-relative p-3'>
             {children}
+            <Footer title={titleShort} />
           </main>
-          <Footer title={titleShort} />
         </div>
       </div>
     </div>
