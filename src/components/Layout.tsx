@@ -21,7 +21,7 @@ export default function Layout({ children, seo }: Props) {
       <div className='d-flex flex-column flex-lg-row'>
         <Navigation brand={titleShort} links={navigation} />
         <div className='d-inline-block w-100'>
-          <main id='content' className='container my-0 mx-auto position-relative p-3'>
+          <main id='content' className='container my-0 position-relative p-3'>
             {children}
           </main>
           <Footer title={titleShort} />
