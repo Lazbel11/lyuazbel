@@ -43,7 +43,7 @@ export const query = graphql`
     contentfulAbout {
       tagline: description
       portrait {
-        gatsbyImageData(width: 200, placeholder: NONE)
+        gatsbyImageData(width: 200)
       }
       bio: childContentfulAboutBioTextNode {
         childMarkdownRemark {

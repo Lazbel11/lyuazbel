@@ -14,26 +14,35 @@ export default function Projects({ data }) {
     <Layout seo={{ title: 'Projects' }}>
       <section id='projects'>
         {projects.map((project, i) => (
-          <article key={i} className='d-flex flew-row mb-5'>
-            <GatsbyImage image={getImage(project.pictures[0])!} className={styles.picture} alt='' />
-            <div>
-              <h4>
-                <a href={project.link} about='_blank' rel='noreferrer noopener'>
-                  {project.title}
-                </a>{' '}
-                <small className='text-muted font-weight-normal' style={{ fontSize: '70%' }}>
-                  {formatProjectTimeframe(project.startDate, project.endDate)}
-                </small>
-              </h4>
-              <h5 className={styles.institution}>
-                <em>{project.institution}</em>
-              </h5>
-              <div
-                className={styles.description}
-                dangerouslySetInnerHTML={{
-                  __html: project.description.childMarkdownRemark.html,
-                }}
-              />
+          <article key={i} className='container mb-5'>
+            <div className='row'>
+              <div className='col-4'>
+                <GatsbyImage
+                  objectFit='cover'
+                  image={getImage(project.pictures[0])!}
+                  className={styles.picture}
+                  alt=''
+                />
+              </div>
+              <div className='col'>
+                <h4>
+                  <a href={project.link} about='_blank' rel='noreferrer noopener'>
+                    {project.title}
+                  </a>{' '}
+                  <small className='text-muted font-weight-normal text-nowrap' style={{ fontSize: '70%' }}>
+                    {formatProjectTimeframe(project.startDate, project.endDate)}
+                  </small>
+                </h4>
+                <h5 className={styles.institution}>
+                  <em>{project.institution}</em>
+                </h5>
+                <div
+                  className={styles.description}
+                  dangerouslySetInnerHTML={{
+                    __html: project.description.childMarkdownRemark.html,
+                  }}
+                />
+              </div>
             </div>
           </article>
         ))}
@@ -53,7 +62,7 @@ export const query = graphql`
           endDate
           link
           pictures {
-            gatsbyImageData(width: 200, placeholder: NONE)
+            gatsbyImageData(layout: CONSTRAINED)
           }
           description {
             childMarkdownRemark {
