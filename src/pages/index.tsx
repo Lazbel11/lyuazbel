@@ -14,17 +14,19 @@ export default function Index({ data }) {
 
   return (
     <Layout>
-      <article id='about'>
-        <h3>{tagline}</h3>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: bio.childMarkdownRemark.html,
-          }}
-        ></div>
-        <GatsbyImage image={getImage(portrait)!} alt='' />
-        <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
-          <MailIcon size={24} />
-        </Obfuscate>
+      <article id='about container'>
+        <div className='col'>
+          <GatsbyImage objectFit='cover' image={getImage(portrait)!} alt='Portrait of Lyu Azbel' className='portrait' />
+          <h3>{tagline}</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: bio.childMarkdownRemark.html,
+            }}
+          ></div>
+          <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
+            <MailIcon size={24} />
+          </Obfuscate>
+        </div>
       </article>
     </Layout>
   );
@@ -41,9 +43,9 @@ export const query = graphql`
       }
     }
     contentfulAbout {
-      tagline: description
+      tagline
       portrait {
-        gatsbyImageData(width: 200)
+        gatsbyImageData(width: 350, height: 350, layout: CONSTRAINED, cropFocus: FACE, resizingBehavior: FILL)
       }
       bio: childContentfulAboutBioTextNode {
         childMarkdownRemark {

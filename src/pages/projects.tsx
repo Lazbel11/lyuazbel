@@ -21,7 +21,7 @@ export default function Projects({ data }) {
                   objectFit='cover'
                   image={getImage(project.pictures[0])!}
                   className={styles.picture}
-                  alt=''
+                  alt='Project Image'
                 />
               </div>
               <div className='col'>
