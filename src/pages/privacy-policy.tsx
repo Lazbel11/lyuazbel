@@ -27,7 +27,7 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        url
+        url: siteUrl
         links {
           name
           href

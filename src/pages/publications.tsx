@@ -21,6 +21,7 @@ export default function Publications({ data }) {
 
   return (
     <Layout seo={{ title: 'Publications' }}>
+      <h1>Publications</h1>
       <article id='publications'>
         {sections.map((id) => {
           if (id === massMediaKey && publicationsByCategory[massMediaKey].length < 3) {

@@ -14,10 +14,15 @@ export default function Index({ data }) {
 
   return (
     <Layout>
-      <article id='about container'>
-        <div className='col'>
-          <GatsbyImage objectFit='cover' image={getImage(portrait)!} alt='Portrait of Lyu Azbel' className='portrait' />
-          <h3>{tagline}</h3>
+      <article id='about'>
+        <div className='d-flex flex-column align-items-start'>
+          <GatsbyImage
+            objectFit='cover'
+            image={getImage(portrait)!}
+            alt='Portrait of Lyu Azbel'
+            className='portrait mb-4'
+          />
+          <h1>{tagline}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: bio.childMarkdownRemark.html,

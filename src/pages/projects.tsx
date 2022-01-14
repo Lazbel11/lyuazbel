@@ -13,6 +13,7 @@ export default function Projects({ data }) {
   return (
     <Layout seo={{ title: 'Projects' }}>
       <section id='projects'>
+        <h1>Projects</h1>
         {projects.map((project, i) => (
           <article key={i} className='container mb-5'>
             <div className='row'>
