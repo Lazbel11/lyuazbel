@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 import typography from '../config/typography';
-import { TypographyStyle, GoogleFont } from 'react-typography';
+import { GoogleFont } from 'react-typography';
 
 export type SEOProps = {
   title?: string;
@@ -36,7 +36,6 @@ const SEO = ({ title, description, image }: SEOProps) => {
       {seo.description && <meta property='og:description' content={seo.description} />}
       {seo.image && <meta property='og:image' content={seo.image} />}
 
-      <TypographyStyle typography={typography} />
       <GoogleFont typography={typography} />
     </Helmet>
   );

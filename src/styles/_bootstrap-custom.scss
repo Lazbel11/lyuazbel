@@ -17,6 +17,8 @@ $container-max-widths: (
   xxxl: 1200px,
 );
 
+$spacer: 1rem;
+
 @import '~bootstrap/scss/bootstrap-utilities.scss';
 @import '~bootstrap/scss/root';
 @import '~bootstrap/scss/reboot';

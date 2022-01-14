@@ -1,10 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './Navigation';
-import Footer from './Footer';
 import SEO, { SEOProps } from './SEO';
-
-import '../styles/main.scss';
+import Footer from './Footer';
 
 type Props = {
   children: React.ReactNode;
