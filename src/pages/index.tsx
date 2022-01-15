@@ -12,26 +12,27 @@ export default function Index({ data, location }) {
   return (
     <Layout location={location}>
       <article id='about'>
-        <div className='d-flex flex-row'>
-          <div className='col-auto me-5'>
-            <GatsbyImage
-              objectFit='cover'
-              image={getImage(portrait)!}
-              alt='Portrait of Lyu Azbel'
-              className='portrait mb-4'
-            />
-          </div>
-
-          <div className='col'>
-            <h1>{tagline}</h1>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: bio.childMarkdownRemark.html,
-              }}
-            ></div>
-            <div className='contact'>
-              <strong>Contact: </strong>
-              <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
+        <div className='container-fluid px-0'>
+          <div className='row gx-0'>
+            <div className='col-12 col-lg-auto me-lg-4 me-xl-5'>
+              <GatsbyImage
+                objectFit='cover'
+                image={getImage(portrait)!}
+                alt='Portrait of Lyu Azbel'
+                className='portrait mb-4'
+              />
+            </div>
+            <div className='col'>
+              <h1>{tagline}</h1>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: bio.childMarkdownRemark.html,
+                }}
+              ></div>
+              <div className='contact'>
+                <strong>Contact: </strong>
+                <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
+              </div>
             </div>
           </div>
         </div>
