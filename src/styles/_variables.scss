@@ -9,4 +9,5 @@ $text-highlight-color: rgb(57 217 233 / 50%);
 $navigation-height: $spacer * 3.39;
 
 $footer-md-height: map-get($spacers, 5);
+$layout-lg-pt: map-get($spacers, 5);
 $footer-height: $footer-md-height + 1rem;

@@ -14,23 +14,10 @@ a {
   }
 }
 
-// ul {
-//   margin: 0;
-// }
-ul {
-  list-style-type: none;
-}
-ul > li {
-  text-indent: -5px;
-}
-ul > li:before {
-  content: '-';
-  text-indent: -5px;
-}
-
 #layout {
   #navigation {
     // circumvent reactstrap default behaviour of adding a container
+
     > .container-fluid {
       padding: 0;
     }
@@ -50,7 +37,14 @@ ul > li:before {
     }
 
     @include media-breakpoint-up(lg) {
-      min-width: 200px;
+      min-width: 240px;
+    }
+    @include media-breakpoint-up(xl) {
+      min-width: 310px;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
     }
 
     .navbar-toggler {
@@ -69,7 +63,7 @@ ul > li:before {
     padding-bottom: $footer-height !important;
 
     @include media-breakpoint-up(lg) {
-      min-height: 100vh;
+      min-height: calc(100vh - #{$layout-lg-pt});
       padding-bottom: $footer-md-height !important;
     }
   }
@@ -91,5 +85,19 @@ ul > li:before {
   .portrait {
     // width: 400px;
     // height: 400px;
+  }
+}
+
+#projects {
+  ul {
+    margin: 0 0 $spacer $spacer;
+  }
+  ul {
+    list-style-type: none;
+  }
+  ul > li:before {
+    content: '\2013';
+    position: absolute;
+    margin-left: -$spacer;
   }
 }

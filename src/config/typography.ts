@@ -1,3 +1,5 @@
+//  WIP: https://github.com/gatsbyjs/gatsby/issues/21079
+
 import Typography from 'typography';
 
 // @ts-ignore

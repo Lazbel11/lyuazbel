@@ -4,9 +4,6 @@ import Obfuscate from 'react-obfuscate';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { find } from 'lodash';
-import { MailIcon } from '@primer/octicons-react';
-
-// todo: add email icon
 
 export default function Index({ data, location }) {
   const email = find(data.site.siteMetadata.links, (link) => link.name.toLowerCase() === 'email');
@@ -15,22 +12,27 @@ export default function Index({ data, location }) {
   return (
     <Layout location={location}>
       <article id='about'>
-        <div className='d-flex flex-column align-items-start'>
-          <GatsbyImage
-            objectFit='cover'
-            image={getImage(portrait)!}
-            alt='Portrait of Lyu Azbel'
-            className='portrait mb-4'
-          />
-          <h1>{tagline}</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: bio.childMarkdownRemark.html,
-            }}
-          ></div>
-          <div className='contact'>
-            <strong>Contact: </strong>
-            <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
+        <div className='d-flex flex-row'>
+          <div className='col-auto me-5'>
+            <GatsbyImage
+              objectFit='cover'
+              image={getImage(portrait)!}
+              alt='Portrait of Lyu Azbel'
+              className='portrait mb-4'
+            />
+          </div>
+
+          <div className='col'>
+            <h1>{tagline}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: bio.childMarkdownRemark.html,
+              }}
+            ></div>
+            <div className='contact'>
+              <strong>Contact: </strong>
+              <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
+            </div>
           </div>
         </div>
       </article>

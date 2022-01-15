@@ -10,7 +10,7 @@ export default function Navigation({ brand, links, location }) {
   const isNavbarBrandActive = location?.pathname === '/' ? true : false;
 
   return (
-    <Navbar id='navigation' expand='lg' className='px-2 py-2 px-lg-4 py-lg-3 align-items-start'>
+    <Navbar id='navigation' expand='lg' className='ps-2 ps-lg-4 py-0 align-items-start'>
       <div className='container-fluid container-lg flex-lg-column px-0 mx-0 position-relative'>
         <Link
           className={classNames('navbar-brand d-inline-block my-0 mx-0 mb-lg-2 py-0 pl-0 pr-1', {

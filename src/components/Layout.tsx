@@ -17,13 +17,15 @@ export default function Layout({ location, children, seo }: Props) {
   return (
     <div id='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
-      <div className='d-flex flex-column flex-lg-row'>
-        <Navigation brand={titleShort} links={navigation} location={location} />
-        <div className='d-inline-block w-100'>
-          <main id='content' className='container my-0 position-relative p-3'>
+      <div className='d-flex flex-column flex-lg-row pt-2 pt-lg-5'>
+        <div className='col-lg-auto'>
+          <Navigation brand={titleShort} links={navigation} location={location} />
+        </div>
+        <div className='col'>
+          <main id='content' className='container m-0 position-relative px-3'>
             {children}
+            <Footer title={titleShort} />
           </main>
-          <Footer title={titleShort} />
         </div>
       </div>
     </div>

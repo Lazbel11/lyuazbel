@@ -15,9 +15,9 @@ export default function Projects({ data }) {
       <section id='projects'>
         <h1>Projects</h1>
         {projects.map((project, i) => (
-          <article key={i} className='container mb-5'>
-            <div className='row'>
-              <div className='col-4'>
+          <article key={i} className='container mb-5 px-0'>
+            <div className='row gx-0'>
+              <div className='col-4 me-4'>
                 <GatsbyImage
                   objectFit='cover'
                   image={getImage(project.pictures[0])!}
@@ -32,9 +32,7 @@ export default function Projects({ data }) {
                       {project.title}
                     </a>{' '}
                   </h2>
-                  <span className='text-muted text-nowrap'>
-                    {formatProjectTimeframe(project.startDate, project.endDate)}
-                  </span>
+                  <span className='text-nowrap'>{formatProjectTimeframe(project.startDate, project.endDate)}</span>
                 </div>
                 <p className={styles.institution}>
                   <em>{project.institution}</em>
