@@ -5,12 +5,19 @@ const typography = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.666,
   scaleRatio: 1.5,
-  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-  bodyFontFamily: ['Helvetica', 'Georgia', 'serif'],
-  headerWeight: 300,
-  bodyWeight: 400,
-  boldWeight: 600,
+  headerFontFamily: ['$font-family-heading'],
+  bodyFontFamily: ['$font-family-body'],
+  // headerWeight: '$font-weight-heading',
+  // bodyWeight: '$font-weight-body',
+  // boldWeight: '$font-weight-bold',
   blockMarginBottom: '1rem',
+  includeNormalize: false,
+  // overrideStyles: (e, options, styles) => ({
+  //   a: {
+  //     fontFamily: '$font-family-heading',
+  //     fontWeight: 400,
+  //   },
+  // }),
 });
 
 const css = typography.toString();
@@ -23,6 +30,8 @@ console.log(css);
 //     console.error('Async: Could not copy text: ', err);
 //   }
 // );
+
+// search & replace all regexes /'\$font-family-(.*)'/ to $font-family-$1
 
 export const { scale, rhythm, options } = typography;
 export default typography;

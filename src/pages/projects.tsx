@@ -26,17 +26,19 @@ export default function Projects({ data }) {
                 />
               </div>
               <div className='col'>
-                <h4>
-                  <a href={project.link} about='_blank' rel='noreferrer noopener'>
-                    {project.title}
-                  </a>{' '}
-                  <small className='text-muted font-weight-normal text-nowrap' style={{ fontSize: '70%' }}>
+                <div className='mb-1'>
+                  <h2 className='d-inline-block mb-2 me-2'>
+                    <a href={project.link} about='_blank' rel='noreferrer noopener'>
+                      {project.title}
+                    </a>{' '}
+                  </h2>
+                  <span className='text-muted text-nowrap'>
                     {formatProjectTimeframe(project.startDate, project.endDate)}
-                  </small>
-                </h4>
-                <h5 className={styles.institution}>
+                  </span>
+                </div>
+                <p className={styles.institution}>
                   <em>{project.institution}</em>
-                </h5>
+                </p>
                 <div
                   className={styles.description}
                   dangerouslySetInnerHTML={{

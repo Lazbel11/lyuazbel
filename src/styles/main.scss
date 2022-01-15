@@ -1,11 +1,52 @@
 @import 'bootstrap-custom';
 @import 'variables';
+@import 'typography';
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  border-bottom: 3px inset $text-highlight-color;
+
+  &:hover {
+    color: $text-color;
+    background-color: $text-highlight-color;
+    border-bottom: 3px inset transparent;
+  }
+}
+
+// ul {
+//   margin: 0;
+// }
+ul {
+  list-style-type: none;
+}
+ul > li {
+  text-indent: -5px;
+}
+ul > li:before {
+  content: '-';
+  text-indent: -5px;
+}
 
 #layout {
   #navigation {
     // circumvent reactstrap default behaviour of adding a container
     > .container-fluid {
       padding: 0;
+    }
+
+    a {
+      font-family: $font-family-heading;
+      font-weight: $font-weight-heading;
+      border-bottom: 3px inset transparent;
+    }
+
+    .active {
+      border-bottom: 3px inset $text-highlight-color;
+
+      &:hover {
+        border-bottom: 3px inset transparent;
+      }
     }
 
     @include media-breakpoint-up(lg) {

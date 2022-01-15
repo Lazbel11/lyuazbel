@@ -29,7 +29,7 @@ export default function Publications({ data }) {
           }
           return (
             <section key={id} id={`section-${id}`}>
-              <h3>{mapPublicationCategoryIdToTitle[id]}</h3>
+              <h2>{mapPublicationCategoryIdToTitle[id]}</h2>
               {publicationsByCategory[id].map((pub, i) => (
                 <article key={i}>
                   <p>

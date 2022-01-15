@@ -1,5 +1,10 @@
 @use 'sass:map';
 
+$black: #000000;
+$text-color: $black;
+// $text-highlight-color: rgb(224 255 55 / 50%);
+$text-highlight-color: rgb(57 217 233 / 50%);
+
 // estimated from current setup in main.scss & Navigation.tsx
 $navigation-height: $spacer * 3.39;
 

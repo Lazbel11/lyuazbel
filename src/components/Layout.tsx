@@ -7,9 +7,10 @@ import Footer from './Footer';
 type Props = {
   children: React.ReactNode;
   seo?: SEOProps;
+  location?: any;
 };
 
-export default function Layout({ children, seo }: Props) {
+export default function Layout({ location, children, seo }: Props) {
   const { site } = useStaticQuery(query);
   const { navigation, titleShort, license, links } = site.siteMetadata;
 
@@ -17,7 +18,7 @@ export default function Layout({ children, seo }: Props) {
     <div id='layout'>
       <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
       <div className='d-flex flex-column flex-lg-row'>
-        <Navigation brand={titleShort} links={navigation} />
+        <Navigation brand={titleShort} links={navigation} location={location} />
         <div className='d-inline-block w-100'>
           <main id='content' className='container my-0 position-relative p-3'>
             {children}

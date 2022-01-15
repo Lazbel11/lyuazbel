@@ -1,188 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+$font-family-heading: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif; // outfit, overpass, heebo, montserrat
+$font-family-body: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
+$font-weight-heading: 400;
+$font-weight-body: 400;
+$font-weight-bold: 500;
+
 html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-[hidden],
-template {
-  display: none;
-}
-a {
-  background-color: transparent;
-}
-a:active,
-a:hover {
-  outline-width: 0;
-}
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-b,
-strong {
-  font-weight: inherit;
-  font-weight: bolder;
-}
-dfn {
-  font-style: italic;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-img {
-  border-style: none;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-figure {
-  margin: 1em 40px;
-}
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit;
-  margin: 0;
-}
-optgroup {
-  font-weight: 700;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-[type='reset'],
-[type='submit'],
-button,
-html [type='button'] {
-  -webkit-appearance: button;
-}
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner,
-button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring,
-button:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-textarea {
-  overflow: auto;
-}
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-[type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type='search']::-webkit-search-cancel-button,
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-html {
-  font: 100%/1.666 'Helvetica', 'Georgia', serif;
+  font: 100%/1.666 $font-family-body;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -197,8 +22,8 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Helvetica', 'Georgia', serif;
-  font-weight: 400;
+  font-family: $font-family-body;
+  font-weight: $font-weight-body;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -227,8 +52,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 1.5rem;
   line-height: 1.1;
@@ -243,8 +68,8 @@ h2 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 1.27542rem;
   line-height: 1.1;
@@ -259,8 +84,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 1.17608rem;
   line-height: 1.1;
@@ -275,8 +100,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -291,8 +116,8 @@ h5 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 0.92211rem;
   line-height: 1.1;
@@ -307,8 +132,8 @@ h6 {
   padding-top: 0;
   margin-bottom: 1rem;
   color: inherit;
-  font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading;
   text-rendering: optimizeLegibility;
   font-size: 0.88547rem;
   line-height: 1.1;
@@ -487,16 +312,16 @@ address {
   margin-bottom: 1rem;
 }
 b {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 strong {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 dt {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 th {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 li {
   margin-bottom: calc(1rem / 2);

@@ -8,12 +8,12 @@ import { MailIcon } from '@primer/octicons-react';
 
 // todo: add email icon
 
-export default function Index({ data }) {
+export default function Index({ data, location }) {
   const email = find(data.site.siteMetadata.links, (link) => link.name.toLowerCase() === 'email');
   const { tagline, portrait, bio } = data.contentfulAbout;
 
   return (
-    <Layout>
+    <Layout location={location}>
       <article id='about'>
         <div className='d-flex flex-column align-items-start'>
           <GatsbyImage
@@ -28,9 +28,10 @@ export default function Index({ data }) {
               __html: bio.childMarkdownRemark.html,
             }}
           ></div>
-          <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
-            <MailIcon size={24} />
-          </Obfuscate>
+          <div className='contact'>
+            <strong>Contact: </strong>
+            <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
+          </div>
         </div>
       </article>
     </Layout>
@@ -50,7 +51,7 @@ export const query = graphql`
     contentfulAbout {
       tagline
       portrait {
-        gatsbyImageData(width: 350, height: 350, layout: CONSTRAINED, cropFocus: FACE, resizingBehavior: FILL)
+        gatsbyImageData(width: 300, height: 300, layout: CONSTRAINED, cropFocus: FACE, resizingBehavior: FILL)
       }
       bio: childContentfulAboutBioTextNode {
         childMarkdownRemark {
