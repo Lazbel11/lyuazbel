@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://www.lyuazbel.com',
     titleShort: 'Lyu Azbel',
     title: 'Lyu Azbel · Public Health Researcher', // maybe add location info
     titleTemplate: '%s · Lyu Azbel',
