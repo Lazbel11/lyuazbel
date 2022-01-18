@@ -2,16 +2,26 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const primary = '#37f6ff80';
+const background = '#18181b';
+const author = 'Lyu Azbel';
+const tagline = 'Public Health Research Scientist';
+const lang = 'en';
+
 module.exports = {
   siteMetadata: {
+    title: `${author} · ${tagline}`,
+    shortTitle: author,
+    titleTemplate: `%s · ${author} · ${tagline}`,
+    author,
+    description: '', // has to be for each page. ex for vincent: Vincent Reynaud's portfolio featuring projects in Frontend Web Development, Visual Design and Electronic Sound Production
     siteUrl: 'https://www.lyuazbel.com',
-    titleShort: 'Lyu Azbel',
-    title: 'Lyu Azbel · Public Health Researcher', // maybe add location info
-    titleTemplate: '%s · Lyu Azbel',
-    description: '', // has to be for each page
     navigation: ['publications', 'projects'],
     links: [{ name: 'Email', href: 'lyu.azbel@gmail.com' }],
     image: '/favicon.png', // image placed in the static folder
+    location: { region: 'DE-BE', placename: 'Berlin' },
+    country: 'de',
+    lang,
     license: '',
   },
   plugins: [
@@ -35,7 +45,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        // icon: 'src/images/favicon.png',
+        name: author,
+        short_name: author,
+        start_url: '/',
+        background_color: `${background}`,
+        theme_color: `${primary}`,
+        display: 'standalone',
+        icon: `src/images/favicon.png`,
+        lang,
       },
     },
     'gatsby-transformer-remark',
