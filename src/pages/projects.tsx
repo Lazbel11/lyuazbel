@@ -26,7 +26,7 @@ export default function Projects({ data }) {
                 />
               </div>
               <div className='col'>
-                <div className='mb-1'>
+                <div className='mb-0'>
                   <h2 className='d-inline-block mb-2 me-2'>
                     <a href={project.link} about='_blank' rel='noreferrer noopener'>
                       {project.title}
@@ -34,9 +34,9 @@ export default function Projects({ data }) {
                   </h2>
                   <span className='text-nowrap'>{formatProjectTimeframe(project.startDate, project.endDate)}</span>
                 </div>
-                <p className={styles.institution}>
+                <span className={styles.institution}>
                   <em>{project.institution}</em>
-                </p>
+                </span>
                 <div
                   className={styles.description}
                   dangerouslySetInnerHTML={{

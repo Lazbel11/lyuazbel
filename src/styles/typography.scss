@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 
-$font-family-heading: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif; // outfit, overpass, heebo, montserrat
-$font-family-body: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
-$font-weight-heading: 400;
-$font-weight-body: 400;
-$font-weight-bold: 500;
-
 html {
-  font: 100%/1.666 $font-family-body;
+  font: 100%/1.2 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -21,9 +15,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: $font-family-body;
-  font-weight: $font-weight-body;
+  color: #303033;
+  font-family: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
+  font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
@@ -40,7 +34,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 h1 {
   margin-left: 0;
@@ -50,10 +44,10 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.5rem;
   line-height: 1.1;
@@ -66,10 +60,10 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.27542rem;
   line-height: 1.1;
@@ -82,10 +76,10 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1.17608rem;
   line-height: 1.1;
@@ -98,10 +92,10 @@ h4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -114,10 +108,10 @@ h5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.92211rem;
   line-height: 1.1;
@@ -130,10 +124,10 @@ h6 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: inherit;
-  font-family: $font-family-heading;
-  font-weight: $font-weight-heading;
+  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 0.88547rem;
   line-height: 1.1;
@@ -146,29 +140,29 @@ hgroup {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 ul {
-  margin-left: 1.666rem;
+  margin-left: 1.2rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   list-style-position: outside;
   list-style-image: none;
 }
 ol {
-  margin-left: 1.666rem;
+  margin-left: 1.2rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -180,7 +174,7 @@ dl {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 dd {
   margin-left: 0;
@@ -190,7 +184,7 @@ dd {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 p {
   margin-left: 0;
@@ -200,7 +194,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 figure {
   margin-left: 0;
@@ -210,7 +204,7 @@ figure {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 pre {
   margin-left: 0;
@@ -220,9 +214,9 @@ pre {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 0.85rem;
-  line-height: 1.666rem;
+  line-height: 1.2rem;
 }
 table {
   margin-left: 0;
@@ -232,9 +226,9 @@ table {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 1rem;
-  line-height: 1.666rem;
+  line-height: 1.8rem;
   border-collapse: collapse;
   width: 100%;
 }
@@ -246,17 +240,17 @@ fieldset {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 blockquote {
-  margin-left: 1.666rem;
-  margin-right: 1.666rem;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 form {
   margin-left: 0;
@@ -266,7 +260,7 @@ form {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 noscript {
   margin-left: 0;
@@ -276,7 +270,7 @@ noscript {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 iframe {
   margin-left: 0;
@@ -286,7 +280,7 @@ iframe {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 hr {
   margin-left: 0;
@@ -296,7 +290,7 @@ hr {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: calc(1rem - 1px);
+  margin-bottom: calc(1.2rem - 1px);
   background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
@@ -309,22 +303,22 @@ address {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 b {
-  font-weight: $font-weight-bold;
+  font-weight: 500;
 }
 strong {
-  font-weight: $font-weight-bold;
+  font-weight: 500;
 }
 dt {
-  font-weight: $font-weight-bold;
+  font-weight: 500;
 }
 th {
-  font-weight: $font-weight-bold;
+  font-weight: 500;
 }
 li {
-  margin-bottom: calc(1rem / 2);
+  margin-bottom: calc(1.2rem / 2);
 }
 ol li {
   padding-left: 0;
@@ -333,14 +327,14 @@ ul li {
   padding-left: 0;
 }
 li > ol {
-  margin-left: 1.666rem;
-  margin-bottom: calc(1rem / 2);
-  margin-top: calc(1rem / 2);
+  margin-left: 1.2rem;
+  margin-bottom: calc(1.2rem / 2);
+  margin-top: calc(1.2rem / 2);
 }
 li > ul {
-  margin-left: 1.666rem;
-  margin-bottom: calc(1rem / 2);
-  margin-top: calc(1rem / 2);
+  margin-left: 1.2rem;
+  margin-bottom: calc(1.2rem / 2);
+  margin-top: calc(1.2rem / 2);
 }
 blockquote *:last-child {
   margin-bottom: 0;
@@ -352,19 +346,19 @@ p *:last-child {
   margin-bottom: 0;
 }
 li > p {
-  margin-bottom: calc(1rem / 2);
+  margin-bottom: calc(1.2rem / 2);
 }
 code {
   font-size: 0.85rem;
-  line-height: 1.666rem;
+  line-height: 1.2rem;
 }
 kbd {
   font-size: 0.85rem;
-  line-height: 1.666rem;
+  line-height: 1.2rem;
 }
 samp {
   font-size: 0.85rem;
-  line-height: 1.666rem;
+  line-height: 1.2rem;
 }
 abbr {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -390,10 +384,10 @@ th {
   -moz-font-feature-settings: 'tnum';
   -ms-font-feature-settings: 'tnum';
   -webkit-font-feature-settings: 'tnum';
-  padding-left: 1.11067rem;
-  padding-right: 1.11067rem;
-  padding-top: 0.833rem;
-  padding-bottom: calc(0.833rem - 1px);
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0.6rem;
+  padding-bottom: calc(0.6rem - 1px);
 }
 th:first-child,
 td:first-child {
@@ -402,4 +396,12 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
 }

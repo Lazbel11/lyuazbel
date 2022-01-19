@@ -1,7 +1,18 @@
 @use 'sass:map';
 
+$header-font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif; // outfit, overpass, heebo, montserrat
+$header-font-weight: 400;
+$bold-font-weight: 500;
+
+$base-font-size: 16px; // Sets the base font size
+$base-line-height: 1.7;
+$rhythm-unit: 'rem';
+$base-font-family: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
+$base-font-weight: 400;
+$base-font-color: #303033;
+
 $black: #000000;
-$text-color: $black;
+$body-color: $black;
 $text-highlight-color: rgb(57 217 233 / 50%);
 
 $footer-md-height: map-get($spacers, 5);

@@ -11,15 +11,16 @@ export type SEOProps = {
   lang?: string;
   location?: { region?: string; placename?: string };
   country?: string;
+  tagline?: string;
 };
 
-const SEO = ({ title, description, lang, location = {}, country, image, robots }: SEOProps) => {
+const SEO = ({ title, tagline, description, lang, location = {}, country, image, robots }: SEOProps) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
-    titleTemplate,
+    defaultTitleTemplate,
     defaultDescription,
     siteUrl,
     author,
@@ -33,9 +34,9 @@ const SEO = ({ title, description, lang, location = {}, country, image, robots }
 
   const seo = {
     title: title || defaultTitle,
+    titleTemplate: tagline ? `%s · ${author} · ${tagline}` : defaultTitleTemplate,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-
     url: `${siteUrl}${pathname}`,
     region: region || defaultRegion,
     lang: lang || defaultLang,
@@ -46,7 +47,7 @@ const SEO = ({ title, description, lang, location = {}, country, image, robots }
   };
 
   return (
-    <Helmet titleTemplate={title && titleTemplate}>
+    <Helmet titleTemplate={title && seo.titleTemplate}>
       <html lang={seo.lang} amp />
       <title itemProp='name' lang={seo.lang}>
         {seo.title}
@@ -74,7 +75,7 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
-        titleTemplate
+        defaultTitleTemplate: titleTemplate
         siteUrl
         author
         defaultDescription: description

@@ -2,24 +2,35 @@
 
 import Typography from 'typography';
 
-// @ts-ignore
+const headerFontFamily = ['Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', 'sans-serif'];
+const baseFontFamily = ['Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', 'sans-serif'];
+const headerFontWeight = 400;
+const boldFontWeight = 500;
+const baseFontSize = '16px';
+const baseLineHeight = 1.2;
+const rythmUnit = 'rem';
+const baseFontWeight = 400;
+const baseFontColor = '#303033';
+
 const typography = new Typography({
-  baseFontSize: '16px',
-  baseLineHeight: 1.666,
+  baseFontSize,
+  baseLineHeight,
   scaleRatio: 1.5,
-  headerFontFamily: ['$font-family-heading'],
-  bodyFontFamily: ['$font-family-body'],
-  // headerWeight: '$font-weight-heading',
-  // bodyWeight: '$font-weight-body',
-  // boldWeight: '$font-weight-bold',
-  blockMarginBottom: '1rem',
+  headerFontFamily,
+  bodyFontFamily: baseFontFamily,
+  headerWeight: headerFontWeight,
+  bodyWeight: baseFontWeight,
+  boldWeight: boldFontWeight,
+  blockMarginBottom: 1,
+  bodyColor: baseFontColor,
   includeNormalize: false,
-  // overrideStyles: (e, options, styles) => ({
-  //   a: {
-  //     fontFamily: '$font-family-heading',
-  //     fontWeight: 400,
-  //   },
-  // }),
+  overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => {
+    return {
+      'h1,h2,h3,h4,h5,h6': {
+        lineHeight: baseLineHeight,
+      },
+    };
+  },
 });
 
 const css = typography.toString();

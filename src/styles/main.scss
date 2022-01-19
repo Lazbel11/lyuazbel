@@ -3,12 +3,12 @@
 @import 'typography';
 
 a {
-  color: $text-color;
+  color: $body-color;
   text-decoration: none;
   border-bottom: 3px inset $text-highlight-color;
 
   &:hover {
-    color: $text-color;
+    color: $body-color;
     background-color: $text-highlight-color;
     border-bottom: 3px inset transparent;
   }
@@ -30,8 +30,8 @@ a {
     }
 
     a {
-      font-family: $font-family-heading;
-      font-weight: $font-weight-heading;
+      font-family: $header-font-family;
+      font-weight: $header-font-weight;
       border-bottom: 3px inset transparent;
     }
 
@@ -88,14 +88,8 @@ a {
   }
 }
 
-#about {
-  .portrait {
-    // width: 400px;
-    // height: 400px;
-  }
-}
-
-#projects {
+#projects,
+#resume {
   ul {
     margin: 0 0 $spacer $spacer;
   }
@@ -112,5 +106,24 @@ a {
 .text-article {
   @include media-breakpoint-up(md) {
     max-width: 80%;
+  }
+}
+
+#resume {
+  h2:not(:first-child) {
+    margin-top: map-get($spacers, 5);
+  }
+  h3 {
+    display: inline-block;
+    strong {
+      font-weight: 300;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+#publications {
+  h3 {
+    line-height: 1.5;
   }
 }

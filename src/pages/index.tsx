@@ -7,10 +7,11 @@ import { find } from 'lodash';
 
 export default function Index({ data, location }) {
   const email = find(data.site.siteMetadata.links, (link) => link.name.toLowerCase() === 'email');
-  const { tagline, portrait, bio } = data.contentfulAbout;
+  const { portrait, bio, tagline } = data.contentfulAbout;
+  const seo = { tagline };
 
   return (
-    <Layout location={location}>
+    <Layout location={location} seo={seo}>
       <article id='about'>
         <div className='container-fluid px-0'>
           <div className='row gx-0'>
@@ -23,7 +24,6 @@ export default function Index({ data, location }) {
               />
             </div>
             <div className='col'>
-              <h1>{tagline}</h1>
               <div
                 dangerouslySetInnerHTML={{
                   __html: bio.childMarkdownRemark.html,

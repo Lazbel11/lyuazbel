@@ -16,8 +16,12 @@ module.exports = {
     author,
     description: '', // has to be for each page. ex for vincent: Vincent Reynaud's portfolio featuring projects in Frontend Web Development, Visual Design and Electronic Sound Production
     siteUrl: 'https://www.lyuazbel.com',
-    navigation: ['publications', 'projects'],
-    links: [{ name: 'Email', href: 'lyu.azbel@gmail.com' }],
+    navigation: ['cv', 'publications', 'projects'],
+    links: [
+      { name: 'Email', href: ' lyu.azbel@yale.edu' },
+      { name: 'LinkedIn', href: ' https://www.linkedin.com/in/lyu-azbel-phd-b45b664a' },
+      { name: 'Instagram', href: ' https://instagram.com/drugsintranslation' },
+    ],
     image: '/favicon.png', // image placed in the static folder
     location: { region: 'DE-BE', placename: 'Berlin' },
     country: 'de',

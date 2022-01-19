@@ -16,7 +16,7 @@ export default function Layout({ location, children, seo }: Props) {
 
   return (
     <div id='layout'>
-      <SEO title={seo?.title} description={seo?.description} image={seo?.image} />
+      <SEO title={seo?.title} tagline={seo?.tagline} description={seo?.description} image={seo?.image} />
       <div className='d-flex flex-column flex-lg-row px-3 px-lg-4 pt-lg-5'>
         <div className='col-lg-auto'>
           <Navigation brand={shortTitle} links={navigation} location={location} />

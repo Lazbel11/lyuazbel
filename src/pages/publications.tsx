@@ -19,28 +19,52 @@ export default function Publications({ data }) {
   const sections = Object.keys(publicationsByCategory).sort();
   const { massMedia: massMediaKey } = publicationCategoryIdMap;
 
+  const Publication1 = ({ pub }) => {
+    return (
+      <div>
+        <p>
+          {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
+          <a href={pub.divnk} about='_blank' rel='noreferrer noopener'>
+            {pub.title}
+          </a>{' '}
+          <em>{pub.publicationName}</em>
+        </p>
+      </div>
+    );
+  };
+
+  const Publication = ({ pub }) => {
+    return (
+      <li className='mb-2'>
+        <h3>
+          <a href={pub.link} about='_blank' rel='noreferrer noopener'>
+            {pub.title}
+          </a>
+        </h3>
+        <p>
+          <em>{pub.publicationName}</em> <br />
+          {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}
+        </p>
+      </li>
+    );
+  };
+
   return (
     <Layout seo={{ title: 'Publications' }}>
       <h1>Publications</h1>
       <article id='publications'>
         {sections.map((id) => {
           if (id === massMediaKey && publicationsByCategory[massMediaKey].length < 3) {
-            return <div></div>;
+            return <span></span>;
           }
           return (
             <section key={id} id={`section-${id}`}>
               <h2>{mapPublicationCategoryIdToTitle[id]}</h2>
-              {publicationsByCategory[id].map((pub, i) => (
-                <article key={i}>
-                  <p>
-                    {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
-                    <a href={pub.link} about='_blank' rel='noreferrer noopener'>
-                      {pub.title}
-                    </a>{' '}
-                    <em>{pub.publicationName}</em>
-                  </p>
-                </article>
-              ))}
+              <ul className='list-unstyled ms-0'>
+                {publicationsByCategory[id].map((pub, i) => (
+                  <Publication key={i} pub={pub} />
+                ))}
+              </ul>
             </section>
           );
         })}
