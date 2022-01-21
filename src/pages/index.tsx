@@ -3,10 +3,21 @@ import * as React from 'react';
 import Obfuscate from 'react-obfuscate';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { find } from 'lodash';
+import find from 'lodash/find';
+import filter from 'lodash/filter';
+import { GoMail } from '@react-icons/all-files/go/GoMail';
+import { RiLinkedinBoxFill } from '@react-icons/all-files/ri/RiLinkedinBoxFill';
+import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram';
+
+const mapLinkIdToIcon = {
+  linkedin: RiLinkedinBoxFill,
+  instagram: AiOutlineInstagram,
+};
 
 export default function Index({ data, location }) {
-  const email = find(data.site.siteMetadata.links, (link) => link.name.toLowerCase() === 'email');
+  const { links } = data.site.siteMetadata;
+  const email = find(links, (link) => link.name.toLowerCase() === 'email');
+  const restLinks = filter(links, (link) => link.name.toLowerCase() !== 'email');
   const { portrait, bio, tagline } = data.contentfulAbout;
   const seo = { tagline };
 
@@ -29,10 +40,23 @@ export default function Index({ data, location }) {
                   __html: bio.childMarkdownRemark.html,
                 }}
               ></div>
-              <div className='contact'>
-                <strong>Contact: </strong>
-                <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer' />
-              </div>
+              <ul className='contact list-unstyled'>
+                <li className='d-inline me-2'>
+                  <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
+                    <GoMail />
+                  </Obfuscate>
+                </li>
+                {restLinks.map((link) => {
+                  const Icon = mapLinkIdToIcon[link.name.toLowerCase()];
+                  return (
+                    <li className='d-inline me-2'>
+                      <a href={link.href} target='_blank' rel='noopener noreferrer'>
+                        <Icon />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>
