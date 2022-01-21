@@ -5,7 +5,7 @@ export const mapNavigationToUrl = {
 };
 
 export const mapNavigationToLinkName = {
-  cv: 'Resume',
+  cv: 'CV',
   publications: 'Publications',
   projects: 'Projects',
 };

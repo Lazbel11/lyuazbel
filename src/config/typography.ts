@@ -7,7 +7,7 @@ const baseFontFamily = ['Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', '
 const headerFontWeight = 400;
 const boldFontWeight = 500;
 const baseFontSize = '16px';
-const baseLineHeight = 1.2;
+const baseLineHeight = 1.1;
 const rythmUnit = 'rem';
 const baseFontWeight = 400;
 const baseFontColor = '#303033';
@@ -15,13 +15,13 @@ const baseFontColor = '#303033';
 const typography = new Typography({
   baseFontSize,
   baseLineHeight,
-  scaleRatio: 1.5,
+  scaleRatio: 1.25,
   headerFontFamily,
   bodyFontFamily: baseFontFamily,
   headerWeight: headerFontWeight,
   bodyWeight: baseFontWeight,
   boldWeight: boldFontWeight,
-  blockMarginBottom: 1,
+  blockMarginBottom: 0.75,
   bodyColor: baseFontColor,
   includeNormalize: false,
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => {
@@ -29,22 +29,15 @@ const typography = new Typography({
       'h1,h2,h3,h4,h5,h6': {
         lineHeight: baseLineHeight,
       },
+      h1: {
+        marginBottom: '1.2rem',
+      },
     };
   },
 });
 
 const css = typography.toString();
 console.log(css);
-// navigator.clipboard.writeText(css).then(
-//   function () {
-//     console.log('Async: Copying to clipboard was successful!');
-//   },
-//   function (err) {
-//     console.error('Async: Could not copy text: ', err);
-//   }
-// );
-
-// search & replace all regexes /'\$font-family-(.*)'/ to $font-family-$1
 
 export const { scale, rhythm, options } = typography;
 export default typography;

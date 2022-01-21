@@ -5,7 +5,7 @@
 a {
   color: $body-color;
   text-decoration: none;
-  border-bottom: 3px inset $text-highlight-color;
+  border-bottom: $border-style;
 
   &:hover {
     color: $body-color;
@@ -15,16 +15,8 @@ a {
 }
 
 #layout {
-  // .layout-container {
-  //   max-width: 570px;
-
-  //   @include media-breakpoint-up(lg) {
-  //     max-width: 1090px;
-  //   }
-  // }
   #navigation {
     // circumvent reactstrap default behaviour of adding a container
-
     > .container-fluid {
       padding: 0;
     }
@@ -36,7 +28,7 @@ a {
     }
 
     .active {
-      border-bottom: 3px inset $text-highlight-color;
+      border-bottom: $border-style;
 
       &:hover {
         border-bottom: 3px inset transparent;
@@ -88,21 +80,7 @@ a {
   }
 }
 
-#projects,
-#resume {
-  ul {
-    margin: 0 0 $spacer $spacer;
-  }
-  ul {
-    list-style-type: none;
-  }
-  ul > li:before {
-    content: '\2013';
-    position: absolute;
-    margin-left: -$spacer;
-  }
-}
-
+// obsolete?
 .text-article {
   @include media-breakpoint-up(md) {
     max-width: 80%;
@@ -122,8 +100,25 @@ a {
   }
 }
 
-#publications {
-  h3 {
-    line-height: 1.5;
+#resume {
+  ul {
+    list-style-type: none;
   }
+}
+
+#publications {
+  .title {
+    line-height: 1.6;
+  }
+  .publication {
+    font-style: italic;
+  }
+
+  blockquote {
+    border-left: $border-style;
+  }
+}
+
+.text-max-width {
+  max-width: 690px;
 }

@@ -15,7 +15,7 @@ export default function Privacy({ data }) {
     <Layout seo={{ title: 'Privacy Policy' }}>
       <article
         id='privacy'
-        className='text-article'
+        className='text-max-width'
         dangerouslySetInnerHTML={{
           __html: privacyHtml,
         }}

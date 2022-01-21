@@ -8,7 +8,7 @@ export default function Resume({ data }) {
 
   return (
     <Layout seo={{ title: 'Resume' }}>
-      <article id='resume'>
+      <article id='resume' className='text-max-width'>
         <h1>{about.tagline}</h1>
         <div
           dangerouslySetInnerHTML={{

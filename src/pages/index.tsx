@@ -23,7 +23,7 @@ export default function Index({ data, location }) {
                 className='portrait mb-4'
               />
             </div>
-            <div className='col'>
+            <div className='col text-max-width'>
               <div
                 dangerouslySetInnerHTML={{
                   __html: bio.childMarkdownRemark.html,

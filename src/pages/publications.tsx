@@ -19,32 +19,30 @@ export default function Publications({ data }) {
   const sections = Object.keys(publicationsByCategory).sort();
   const { massMedia: massMediaKey } = publicationCategoryIdMap;
 
-  const Publication1 = ({ pub }) => {
-    return (
-      <div>
-        <p>
-          {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}{' '}
-          <a href={pub.divnk} about='_blank' rel='noreferrer noopener'>
-            {pub.title}
-          </a>{' '}
-          <em>{pub.publicationName}</em>
-        </p>
-      </div>
-    );
-  };
-
   const Publication = ({ pub }) => {
     return (
-      <li className='mb-2'>
-        <h3>
-          <a href={pub.link} about='_blank' rel='noreferrer noopener'>
-            {pub.title}
+      <li className='mb-3'>
+        <div className='mb-1'>
+          <a href={pub.link} about='_blank' rel='noreferrer noopener' className='title me-1'>
+            <h3 className='d-inline'>{pub.title}</h3>
           </a>
-        </h3>
-        <p>
-          <em>{pub.publicationName}</em> <br />
-          {new Date(pub.date).getFullYear()} {pub.authors.join(', ')}
+          <span className='publication text-nowrap'>{pub.publicationName}</span>
+        </div>
+        <p className='authors'>
+          {pub.authors.join(', ')}
+          <span className='date'>&nbsp;({new Date(pub.date).getFullYear()})</span>
         </p>
+
+        {pub.quote ? (
+          <blockquote
+            className='mx-0 px-3 py-0'
+            dangerouslySetInnerHTML={{
+              __html: pub.quote.childMarkdownRemark.html,
+            }}
+          />
+        ) : (
+          <span />
+        )}
       </li>
     );
   };
@@ -52,7 +50,7 @@ export default function Publications({ data }) {
   return (
     <Layout seo={{ title: 'Publications' }}>
       <h1>Publications</h1>
-      <article id='publications'>
+      <article id='publications' className='text-max-width'>
         {sections.map((id) => {
           if (id === massMediaKey && publicationsByCategory[massMediaKey].length < 3) {
             return <span></span>;
@@ -60,7 +58,7 @@ export default function Publications({ data }) {
           return (
             <section key={id} id={`section-${id}`}>
               <h2>{mapPublicationCategoryIdToTitle[id]}</h2>
-              <ul className='list-unstyled ms-0'>
+              <ul className='list-unstyled ms-0 mb-5'>
                 {publicationsByCategory[id].map((pub, i) => (
                   <Publication key={i} pub={pub} />
                 ))}
@@ -82,6 +80,11 @@ export const query = graphql`
           publicationName
           authors
           category
+          quote {
+            childMarkdownRemark {
+              html
+            }
+          }
           date(formatString: "YYYY-MM-DD")
           link
         }
