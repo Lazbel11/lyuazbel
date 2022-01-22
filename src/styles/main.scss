@@ -64,7 +64,7 @@ a {
 
     @include media-breakpoint-up(lg) {
       min-height: calc(100vh - #{$layout-lg-pt});
-      padding-bottom: $footer-md-height !important;
+      padding-bottom: $footer-sm-height !important;
     }
   }
 
@@ -75,8 +75,8 @@ a {
     bottom: 0;
     left: 0;
 
-    @include media-breakpoint-up(md) {
-      height: $footer-md-height;
+    @include media-breakpoint-up(sm) {
+      height: $footer-sm-height;
     }
   }
 }
