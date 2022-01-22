@@ -49,6 +49,7 @@ a {
     .navbar-toggler {
       top: $spacer * 0.09;
       right: 0;
+      color: $base-font-color !important;
 
       &:focus {
         box-shadow: unset;
