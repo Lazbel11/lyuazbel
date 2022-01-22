@@ -11,9 +11,8 @@ $base-font-family: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-s
 $base-font-weight: 400;
 $base-font-color: #303033;
 
-$black: #000000;
 $body-color: $black;
-$text-highlight-color: rgb(57 217 233 / 50%);
+$text-highlight-color: rgba($primary, 0.5);
 
 $footer-md-height: map-get($spacers, 5);
 $layout-lg-pt: map-get($spacers, 5);

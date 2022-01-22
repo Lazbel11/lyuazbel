@@ -80,6 +80,33 @@ a {
   }
 }
 
+#about {
+  .bio {
+    text-align: justify;
+    text-justify: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .portrait {
+    max-height: 400px;
+  }
+
+  .contact {
+    margin-top: -6px;
+
+    a {
+      border: none;
+
+      &:hover {
+        background: transparent;
+        color: $primary;
+      }
+    }
+  }
+}
+
 // obsolete?
 .text-article {
   @include media-breakpoint-up(md) {
@@ -91,6 +118,7 @@ a {
   h2:not(:first-child) {
     margin-top: map-get($spacers, 5);
   }
+
   h3 {
     display: inline-block;
     strong {
@@ -98,9 +126,7 @@ a {
       padding-left: 0.5rem;
     }
   }
-}
 
-#resume {
   ul {
     list-style-type: none;
   }
@@ -110,6 +136,7 @@ a {
   .title {
     line-height: 1.6;
   }
+
   .publication {
     font-style: italic;
   }

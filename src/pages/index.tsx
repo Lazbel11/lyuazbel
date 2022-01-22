@@ -23,10 +23,10 @@ export default function Index({ data, location }) {
 
   return (
     <Layout location={location} seo={seo}>
-      <article id='about'>
+      <article id='about' className='text-max-width'>
         <div className='container-fluid px-0'>
           <div className='row gx-0'>
-            <div className='col-12 col-lg-auto me-lg-4 me-xl-5'>
+            <div className='col-12 col-lg-12 me-lg-4 me-xl-5'>
               <GatsbyImage
                 objectFit='cover'
                 image={getImage(portrait)!}
@@ -36,12 +36,13 @@ export default function Index({ data, location }) {
             </div>
             <div className='col text-max-width'>
               <div
+                className='bio'
                 dangerouslySetInnerHTML={{
                   __html: bio.childMarkdownRemark.html,
                 }}
               ></div>
-              <ul className='contact list-unstyled'>
-                <li className='d-inline me-2'>
+              <ul className='contact list-unstyled ms-0 d-flex flex-row justify-content-start'>
+                <li className='me-4'>
                   <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
                     <GoMail />
                   </Obfuscate>
@@ -49,7 +50,7 @@ export default function Index({ data, location }) {
                 {restLinks.map((link) => {
                   const Icon = mapLinkIdToIcon[link.name.toLowerCase()];
                   return (
-                    <li className='d-inline me-2'>
+                    <li className='me-4'>
                       <a href={link.href} target='_blank' rel='noopener noreferrer'>
                         <Icon />
                       </a>
@@ -78,7 +79,7 @@ export const query = graphql`
     contentfulAbout {
       tagline
       portrait {
-        gatsbyImageData(width: 300, height: 300, layout: CONSTRAINED, cropFocus: FACE, resizingBehavior: FILL)
+        gatsbyImageData(layout: CONSTRAINED, cropFocus: FACE, resizingBehavior: FILL)
       }
       bio: childContentfulAboutBioTextNode {
         childMarkdownRemark {
