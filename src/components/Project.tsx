@@ -26,9 +26,13 @@ export default function Project({ project }) {
         <div className='col'>
           <div className='mb-0'>
             <h2 className='d-inline-block mb-2 me-2'>
-              <a href={project.link} about='_blank' rel='noreferrer noopener'>
-                {project.title}
-              </a>{' '}
+              {!project.link ? (
+                project.title
+              ) : (
+                <a href={project.link} about='_blank' rel='noreferrer noopener'>
+                  {project.title}
+                </a>
+              )}{' '}
             </h2>
             <span className='text-nowrap'>{formatProjectTimeframe(project.startDate, project.endDate)}</span>
           </div>

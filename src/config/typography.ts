@@ -37,7 +37,7 @@ const typography = new Typography({
 });
 
 const css = typography.toString();
-console.log(css);
+// console.log(css);
 
 export const { scale, rhythm, options } = typography;
 export default typography;
