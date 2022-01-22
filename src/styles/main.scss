@@ -58,6 +58,7 @@ a {
   }
 
   #content {
+    max-width: 690px;
     min-height: calc(100vh - #{$navigation-height});
     padding-bottom: $footer-height !important;
 
@@ -149,10 +150,6 @@ a {
   blockquote {
     border-left: $border-style;
   }
-}
-
-.content-max-width {
-  max-width: 690px;
 }
 
 .contact {

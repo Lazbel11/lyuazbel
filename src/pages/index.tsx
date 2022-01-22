@@ -23,7 +23,7 @@ export default function Index({ data, location }) {
 
   return (
     <Layout location={location} seo={seo}>
-      <article id='about' className='content-max-width'>
+      <article id='about'>
         <div className='container-fluid px-0'>
           <div className='row gx-0'>
             <div className='col-12 col-lg-12 me-lg-4 me-xl-5'>
@@ -34,7 +34,7 @@ export default function Index({ data, location }) {
                 className='portrait mb-4'
               />
             </div>
-            <div className='col content-max-width'>
+            <div className='col '>
               <div
                 className='bio'
                 dangerouslySetInnerHTML={{

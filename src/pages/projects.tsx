@@ -9,7 +9,7 @@ export default function Projects({ data }) {
 
   return (
     <Layout seo={{ title: 'Projects' }}>
-      <section id='projects' className='content-max-width'>
+      <section id='projects'>
         <h1>Projects</h1>
         {projects.map((project, i) => (
           <Project key={i} project={project} />
