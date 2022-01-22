@@ -39,7 +39,12 @@ export function simpleFormatString(title: string, format: 'id' | 'headline' = 'i
 
 export function formatProjectDate(date: string) {
   // todo: replace date by 'present' if given date is in the future
-  return new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' });
+  const projectDate = new Date(date);
+  const displayDate =
+    projectDate.getTime() > new Date().getTime()
+      ? 'present'
+      : projectDate.toLocaleDateString('en-GB', { year: 'numeric' });
+  return displayDate;
 }
 
 export function formatProjectTimeframe(start: string, end: string) {

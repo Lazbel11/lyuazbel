@@ -102,6 +102,7 @@ a {
       &:hover {
         background: transparent;
         color: $primary;
+        filter: brightness(80%);
       }
     }
   }
@@ -121,8 +122,12 @@ a {
 
   h3 {
     display: inline-block;
+    margin-bottom: map-get($spacers, 2);
+
     strong {
-      font-weight: 300;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      font-weight: $base-font-weight;
       padding-left: 0.5rem;
     }
   }
@@ -146,10 +151,32 @@ a {
   }
 }
 
-.text-max-width {
+.content-max-width {
   max-width: 690px;
 }
 
 .contact {
   font-size: 2rem;
+}
+
+#projects {
+  .button {
+    border: none;
+  }
+
+  .picture {
+    // min-width: 250px;
+    max-height: 400px;
+  }
+
+  .institution {
+    font-style: italic;
+  }
+}
+
+.md-style {
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
 }

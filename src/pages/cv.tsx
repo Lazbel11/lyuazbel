@@ -8,9 +8,10 @@ export default function Resume({ data }) {
 
   return (
     <Layout seo={{ title: 'Resume' }}>
-      <article id='resume' className='text-max-width'>
+      <article id='resume' className='content-max-width'>
         <h1>{about.tagline}</h1>
         <div
+          className='md-style'
           dangerouslySetInnerHTML={{
             __html: resume.html,
           }}
