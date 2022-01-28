@@ -6,7 +6,7 @@ const headerFontFamily = ['Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', '
 const baseFontFamily = ['Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', 'sans-serif'];
 const headerFontWeight = 400;
 const boldFontWeight = 500;
-const baseFontSize = '16px';
+const baseFontSize = '14px';
 const baseLineHeight = 1.1;
 const rythmUnit = 'rem';
 const baseFontWeight = 400;
@@ -15,7 +15,7 @@ const baseFontColor = '#303033';
 const typography = new Typography({
   baseFontSize,
   baseLineHeight,
-  scaleRatio: 1.25,
+  scaleRatio: 1.4,
   headerFontFamily,
   bodyFontFamily: baseFontFamily,
   headerWeight: headerFontWeight,
@@ -37,7 +37,7 @@ const typography = new Typography({
 });
 
 const css = typography.toString();
-// console.log(css);
+console.log(css);
 
 export const { scale, rhythm, options } = typography;
 export default typography;

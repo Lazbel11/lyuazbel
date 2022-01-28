@@ -7,7 +7,7 @@ export default function Footer({ title, links }) {
       <small>
         <ul className='list-unstyled ms-0 mb-0 d-flex flex-row justify-content-start'>
           {links.map((link) => (
-            <li className='me-2 mb-1'>
+            <li className='me-2 mb-1' key={link.name}>
               <a href={link.href}>{link.name}</a>
             </li>
           ))}

@@ -37,8 +37,7 @@
     "react-obfuscate": "^3.6.8",
     "react-typography": "^0.16.20",
     "reactstrap": "^9.0.1",
-    "typography": "^0.16.21",
-    "typomatic": "0.0.1"
+    "typography": "^0.16.21"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
