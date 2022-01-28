@@ -20,7 +20,7 @@ module.exports = {
     links: [
       { name: 'Email', href: ' lyu.azbel@yale.edu' },
       { name: 'LinkedIn', href: ' https://www.linkedin.com/in/lyu-azbel-phd-b45b664a' },
-      { name: 'Instagram', href: ' https://instagram.com/drugsintranslation' },
+      { name: 'ResearchGate', href: ' https://www.researchgate.net/profile/Lyu-Azbel' },
     ],
     image: '/favicon.png', // image placed in the static folder
     location: { region: 'DE-BE', placename: 'Berlin' },

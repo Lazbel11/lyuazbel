@@ -7,11 +7,11 @@ import find from 'lodash/find';
 import filter from 'lodash/filter';
 import { GoMail } from '@react-icons/all-files/go/GoMail';
 import { RiLinkedinBoxFill } from '@react-icons/all-files/ri/RiLinkedinBoxFill';
-import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram';
+import { FaResearchgate } from '@react-icons/all-files/fa/FaResearchgate';
 
 const mapLinkIdToIcon = {
   linkedin: RiLinkedinBoxFill,
-  instagram: AiOutlineInstagram,
+  researchgate: FaResearchgate,
 };
 
 export default function Index({ data, location }) {
