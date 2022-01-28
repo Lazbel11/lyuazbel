@@ -7,7 +7,7 @@ export default function Resume({ data }) {
   const [resume] = education.edges.map(({ node }) => node.pageText.childMarkdownRemark);
 
   return (
-    <Layout seo={{ title: 'Resume' }}>
+    <Layout seo={{ title: 'CV' }}>
       <article id='resume'>
         <h1>{about.tagline}</h1>
         <div
