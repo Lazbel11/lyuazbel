@@ -35,7 +35,7 @@ export default function Publications({ data }) {
 
         {pub.quote ? (
           <blockquote
-            className='mx-0 px-3 py-0'
+            className='px-3 py-0 text-justify'
             dangerouslySetInnerHTML={{
               __html: pub.quote.childMarkdownRemark.html,
             }}

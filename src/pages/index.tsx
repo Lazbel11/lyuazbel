@@ -36,7 +36,7 @@ export default function Index({ data, location }) {
             </div>
             <div className='col '>
               <div
-                className='bio'
+                className='text-justify'
                 dangerouslySetInnerHTML={{
                   __html: bio.childMarkdownRemark.html,
                 }}

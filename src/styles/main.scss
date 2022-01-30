@@ -84,14 +84,6 @@ a {
 }
 
 #about {
-  .bio {
-    text-align: justify;
-    text-justify: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  }
-
   .portrait {
     max-height: 400px;
   }
@@ -178,4 +170,12 @@ a {
     list-style: none;
     margin-left: 0;
   }
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
