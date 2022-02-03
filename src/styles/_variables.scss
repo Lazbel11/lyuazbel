@@ -15,7 +15,7 @@ $base-font-color: $black;
 $body-color: $black;
 $text-highlight-color: rgba($primary, 0.5);
 
-$footer-base-height: 4.6rem + map-get($spacers, 3);
+$footer-base-height: 5.6rem + map-get($spacers, 3);
 $footer-md-height: 2rem + map-get($spacers, 3);
 $layout-lg-pt: map-get($spacers, 5);
 $navigation-height: $spacer * 3.93; // estimated from current setup in main.scss & Navigation.tsx

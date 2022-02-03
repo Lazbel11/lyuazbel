@@ -105,9 +105,23 @@ a {
   }
 }
 
+$icon-font-size: 1.5rem;
 #footer {
+  .separator {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: inherit;
+    }
+  }
   .iconLink {
-    font-size: 1.4rem;
+    font-size: $icon-font-size;
+
+    // &.researchgate {
+    //   font-size: 0.9 * $icon-font-size;
+    // }
+    // &.email {
+    //   font-size: 1.05 * $icon-font-size;
+    // }
   }
 }
 
@@ -152,10 +166,6 @@ a {
   blockquote {
     border-left: $border-style;
   }
-}
-
-.contact {
-  font-size: 2rem;
 }
 
 #projects {
