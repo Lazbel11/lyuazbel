@@ -24,7 +24,8 @@ module.exports = {
     shortTitle: author,
     titleTemplate: `%s · ${author} · ${tagline}`,
     author,
-    description: '', // has to be for each page. ex for vincent: Vincent Reynaud's portfolio featuring projects in Frontend Web Development, Visual Design and Electronic Sound Production
+    description:
+      'Dr. Lyu Azbel’s portfolio featuring research projects at the intersection of drug use, subcultures, and marginalized communities.',
     siteUrl,
     navigation: ['cv', 'publications', 'projects'],
     links: [
