@@ -11,7 +11,6 @@ import { mapLinkIdToIcon } from '../config';
 export default function Index({ data, location }) {
   const { links } = data.site.siteMetadata;
   const email = find(links, (link) => link.name.toLowerCase() === 'email');
-  const restLinks = filter(links, (link) => link.name.toLowerCase() !== 'email');
   const { portrait, bio, tagline } = data.contentfulAbout;
   const seo = { tagline };
 
@@ -35,23 +34,12 @@ export default function Index({ data, location }) {
                   __html: bio.childMarkdownRemark.html,
                 }}
               ></div>
-              <ul className='contact list-unstyled ms-0 d-flex flex-row justify-content-start'>
-                <li className='me-4'>
-                  <Obfuscate email={email?.href || ''} className='iconLink' target='_blank' rel='noopener noreferrer'>
-                    <GoMail />
-                  </Obfuscate>
-                </li>
-                {restLinks.map((link) => {
-                  const Icon = mapLinkIdToIcon[link.name.toLowerCase()];
-                  return (
-                    <li className='me-4'>
-                      <a className='iconLink' href={link.href} target='_blank' rel='noopener noreferrer'>
-                        <Icon />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
+              <p className='me-4'>
+                <strong className='me-2'>Contact:</strong>
+                <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
+                  {email?.href}
+                </Obfuscate>
+              </p>
             </div>
           </div>
         </div>
