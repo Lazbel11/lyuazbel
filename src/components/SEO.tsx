@@ -51,7 +51,7 @@ const SEO = ({ title, tagline, description, lang, location = {}, country, image,
     placename: placename || defaultPlacename,
     country: country || defaultCountry,
     author,
-    robots: robots || 'index, follow',
+    robots,
   };
 
   return (
@@ -79,7 +79,7 @@ const SEO = ({ title, tagline, description, lang, location = {}, country, image,
       <meta name='author' content={seo.author} />
       <meta name='theme-color' content='primary-color' />
       <meta name='color-scheme' content='dark light' />
-      {robots ? <meta name='robots' content={seo.robots} /> : null}
+      {seo.robots ? <meta name='robots' content={seo.robots} /> : null}
     </Helmet>
   );
 };
