@@ -6,6 +6,16 @@ const primary = '#37f6ff80';
 const background = '#18181b';
 const author = 'Lyu Azbel';
 const tagline = 'Public Health Research Scientist';
+const siteUrl = 'https://www.lyuazbel.com';
+const noindex = [
+  '/imprint/',
+  '/imprint',
+  '/privacy-policy/',
+  '/privacy-policy',
+  '/404',
+  '/404/',
+  '/offline-plugin-app-shell-fallback/',
+];
 const lang = 'en';
 
 module.exports = {
@@ -15,7 +25,7 @@ module.exports = {
     titleTemplate: `%s · ${author} · ${tagline}`,
     author,
     description: '', // has to be for each page. ex for vincent: Vincent Reynaud's portfolio featuring projects in Frontend Web Development, Visual Design and Electronic Sound Production
-    siteUrl: 'https://www.lyuazbel.com',
+    siteUrl,
     navigation: ['cv', 'publications', 'projects'],
     links: [
       { name: 'Email', href: ' lyu.azbel@yale.edu' },
@@ -43,9 +53,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -89,6 +97,43 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
+    },
+    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-offline`, // must stay after manifest
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
+        policy: [{ userAgent: '*', allow: '/', disallow: noindex }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        excludes: noindex,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map((page) => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path }) => {
+          return {
+            url: path,
+            lastmod: Date.now(),
+          };
+        },
+      },
     },
   ],
 };

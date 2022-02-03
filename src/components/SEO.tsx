@@ -3,23 +3,30 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
+/* Tips
+ * description: keep bellow 158 chars, most important information in the first 120 chars
+ * https://seosherpa.com/meta-descriptions/
+ *
+ */
+
 export type SEOProps = {
   title?: string;
   description?: string;
   image?: string;
-  robots?: string;
+  robots?: string | null;
   lang?: string;
   location?: { region?: string; placename?: string };
   country?: string;
   tagline?: string;
 };
 
-const SEO = ({ title, tagline, description, lang, location = {}, country, image, robots }: SEOProps) => {
+const SEO = ({ title, tagline, description, lang, location = {}, country, image, robots = null }: SEOProps) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
+    shortTitle,
     defaultTitleTemplate,
     defaultDescription,
     siteUrl,
@@ -35,6 +42,7 @@ const SEO = ({ title, tagline, description, lang, location = {}, country, image,
   const seo = {
     title: title || defaultTitle,
     titleTemplate: tagline ? `%s · ${author} · ${tagline}` : defaultTitleTemplate,
+    ogTitle: `${title ? `${title} ` : ''}${shortTitle}`,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
@@ -43,26 +51,34 @@ const SEO = ({ title, tagline, description, lang, location = {}, country, image,
     placename: placename || defaultPlacename,
     country: country || defaultCountry,
     author,
-    robots,
+    robots: robots || 'index, follow',
   };
 
   return (
     <Helmet titleTemplate={title && seo.titleTemplate}>
-      <html lang={seo.lang} amp />
+      <html lang={seo.lang} />
       <title itemProp='name' lang={seo.lang}>
         {seo.title}
       </title>
+      <link rel='canonical' href={seo.url} />
+      <meta name='title' content={seo.title} />
       <meta name='description' content={seo.description} />
-      {seo.image ? <meta name='image' content={seo.image} /> : null}
       <meta http-equiv='content-language' content={`${seo.lang}-${seo.country}`} />
-
-      {seo.url ? <meta property='og:url' content={seo.url} /> : null}
-      {seo.title ? <meta property='og:title' content={seo.title} /> : null}
-      {seo.description ? <meta property='og:description' content={seo.description} /> : null}
+      <meta property='og:type' content='website' />
+      <meta property='og:title' content={seo.ogTitle} />
+      <meta property='og:description' content={seo.description} />
+      <meta property='og:url' content={seo.url} />
       {seo.image ? <meta property='og:image' content={seo.image} /> : null}
+      <meta property='twitter:card' content='summary_large_image' />
+      <meta property='twitter:url' content={seo.url} />
+      <meta property='twitter:title' content={seo.ogTitle} />
+      <meta property='twitter:description' content={seo.description} />
+      <meta property='twitter:image' content={seo.image} />
       <meta name='geo.region' content={seo.region} />
       <meta name='geo.placename' content={seo.placename} />
       <meta name='author' content={seo.author} />
+      <meta name='theme-color' content='primary-color' />
+      <meta name='color-scheme' content='dark light' />
       {robots ? <meta name='robots' content={seo.robots} /> : null}
     </Helmet>
   );
@@ -71,10 +87,11 @@ const SEO = ({ title, tagline, description, lang, location = {}, country, image,
 export default SEO;
 
 const query = graphql`
-  query SEO {
+  query {
     site {
       siteMetadata {
         defaultTitle: title
+        shortTitle
         defaultTitleTemplate: titleTemplate
         siteUrl
         author
