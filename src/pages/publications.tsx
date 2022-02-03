@@ -22,17 +22,13 @@ export default function Publications({ data }) {
   const Publication = ({ pub }) => {
     return (
       <li className='mb-3'>
-        <div className='mb-1'>
+        <div className='mb-2'>
           <a href={pub.link} about='_blank' rel='noreferrer noopener' className='title me-1'>
             <h3 className='d-inline'>{pub.title}</h3>
           </a>
-          <span className='publication text-nowrap'>{pub.publicationName}</span>
+          <span className='publication text-nowrap me-1'>{pub.publicationName}</span>
+          <span className='date'>{new Date(pub.date).getFullYear()}</span>
         </div>
-        <p className='authors'>
-          {pub.authors.join(', ')}
-          <span className='date'>&nbsp;({new Date(pub.date).getFullYear()})</span>
-        </p>
-
         {pub.quote ? (
           <blockquote
             className='px-3 py-0 text-justify'
