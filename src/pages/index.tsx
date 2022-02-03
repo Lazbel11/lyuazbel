@@ -4,9 +4,6 @@ import Obfuscate from 'react-obfuscate';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import find from 'lodash/find';
-import filter from 'lodash/filter';
-import { GoMail } from '@react-icons/all-files/go/GoMail';
-import { mapLinkIdToIcon } from '../config';
 
 export default function Index({ data, location }) {
   const { links } = data.site.siteMetadata;
