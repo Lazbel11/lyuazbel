@@ -1,3 +1,7 @@
+import { RiLinkedinBoxFill } from '@react-icons/all-files/ri/RiLinkedinBoxFill';
+import { FaResearchgate } from '@react-icons/all-files/fa/FaResearchgate';
+import { GoMail } from '@react-icons/all-files/go/GoMail';
+
 export const mapNavigationToUrl = {
   cv: '/cv',
   publications: '/publications',
@@ -28,4 +32,10 @@ export const mapPublicationCategoryIdToTitle = {
   [publicationCategoryIdMap.addictions]: 'Addictions',
   [publicationCategoryIdMap.prison]: 'People in Prison',
   [publicationCategoryIdMap.publicHealth]: 'Queering Public Health',
+};
+
+export const mapLinkIdToIcon = {
+  linkedin: RiLinkedinBoxFill,
+  researchgate: FaResearchgate,
+  email: GoMail,
 };

@@ -24,7 +24,7 @@ export default function Layout({ location, children, seo }: Props) {
         <div className='col'>
           <main id='content' className='container position-relative m-0 px-0 py-2 py-lg-0'>
             {children}
-            <Footer title={shortTitle} links={links} />
+            <Footer title={shortTitle} links={links} location={location} />
           </main>
         </div>
       </div>

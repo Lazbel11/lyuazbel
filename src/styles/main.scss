@@ -62,23 +62,25 @@ a {
   #content {
     max-width: 690px;
     min-height: calc(100vh - #{$navigation-height});
-    padding-bottom: $footer-height !important;
+    padding-bottom: $footer-base-height !important;
 
+    @include media-breakpoint-up(md) {
+      padding-bottom: $footer-md-height !important;
+    }
     @include media-breakpoint-up(lg) {
       min-height: calc(100vh - #{$layout-lg-pt});
-      padding-bottom: $footer-sm-height !important;
     }
   }
 
   #footer {
     width: 100%;
-    height: $footer-height;
+    height: $footer-base-height;
     position: absolute;
     bottom: 0;
     left: 0;
 
-    @include media-breakpoint-up(sm) {
-      height: $footer-sm-height;
+    @include media-breakpoint-up(md) {
+      height: $footer-md-height;
     }
   }
 }
@@ -90,16 +92,22 @@ a {
 
   .contact {
     margin-top: -6px;
+  }
+}
 
-    a {
-      border: none;
+.iconLink {
+  border: none;
 
-      &:hover {
-        background: transparent;
-        color: $primary;
-        filter: brightness(80%);
-      }
-    }
+  &:hover {
+    background: transparent;
+    color: $primary;
+    filter: brightness(80%);
+  }
+}
+
+#footer {
+  .iconLink {
+    font-size: 1.4rem;
   }
 }
 

@@ -6,13 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import find from 'lodash/find';
 import filter from 'lodash/filter';
 import { GoMail } from '@react-icons/all-files/go/GoMail';
-import { RiLinkedinBoxFill } from '@react-icons/all-files/ri/RiLinkedinBoxFill';
-import { FaResearchgate } from '@react-icons/all-files/fa/FaResearchgate';
-
-const mapLinkIdToIcon = {
-  linkedin: RiLinkedinBoxFill,
-  researchgate: FaResearchgate,
-};
+import { mapLinkIdToIcon } from '../config';
 
 export default function Index({ data, location }) {
   const { links } = data.site.siteMetadata;
@@ -43,7 +37,7 @@ export default function Index({ data, location }) {
               ></div>
               <ul className='contact list-unstyled ms-0 d-flex flex-row justify-content-start'>
                 <li className='me-4'>
-                  <Obfuscate email={email?.href || ''} target='_blank' rel='noopener noreferrer'>
+                  <Obfuscate email={email?.href || ''} className='iconLink' target='_blank' rel='noopener noreferrer'>
                     <GoMail />
                   </Obfuscate>
                 </li>
@@ -51,7 +45,7 @@ export default function Index({ data, location }) {
                   const Icon = mapLinkIdToIcon[link.name.toLowerCase()];
                   return (
                     <li className='me-4'>
-                      <a href={link.href} target='_blank' rel='noopener noreferrer'>
+                      <a className='iconLink' href={link.href} target='_blank' rel='noopener noreferrer'>
                         <Icon />
                       </a>
                     </li>
