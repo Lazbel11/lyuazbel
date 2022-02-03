@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Button, Collapse } from 'reactstrap';
-import { formatProjectTimeframe } from '../helpers';
+import { formatProjectDate, formatProjectTimeframe } from '../helpers';
 
 export default function Project({ project }) {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +34,7 @@ export default function Project({ project }) {
                 </a>
               )}{' '}
             </h2>
-            <span className='text-nowrap'>{formatProjectTimeframe(project.startDate, project.endDate)}</span>
+            <span className='text-nowrap'>{formatProjectDate(project.endDate)}</span>
           </div>
           <Collapse isOpen={open}>
             <p className='institution mb-2'>{project.institution}</p>
