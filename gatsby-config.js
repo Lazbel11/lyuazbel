@@ -25,7 +25,7 @@ module.exports = {
     titleTemplate: `%s · ${author} · ${tagline}`,
     author,
     description:
-      'Dr. Lyu Azbel’s portfolio featuring research projects at the intersection of drug use, subcultures, and marginalized communities.',
+      'Dr. Lyu Azbel’s portfolio featuring research projects at the intersection of drug use, marginalized subcultures, and infectious diseases.',
     siteUrl,
     navigation: ['cv', 'publications', 'projects'],
     links: [
