@@ -2,9 +2,8 @@
 
 import Typography from 'typography';
 
-const headerFontFamily = ['Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', 'sans-serif'];
-const baseFontFamily = ['Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', 'sans-serif'];
-// const baseFontFamily = ['Helvetica Thai Regular', 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', 'sans-serif'];
+const baseFontFamily = ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'];
+const headerFontFamily = baseFontFamily;
 const headerFontWeight = 400;
 const boldFontWeight = 500;
 const baseFontSize = '14px';
@@ -16,7 +15,7 @@ const baseFontColor = '#303033';
 const typography = new Typography({
   baseFontSize,
   baseLineHeight,
-  scaleRatio: 1.4,
+  scaleRatio: 1.5,
   headerFontFamily,
   bodyFontFamily: baseFontFamily,
   headerWeight: headerFontWeight,

@@ -10,6 +10,8 @@ export default function Project({ project }) {
     setOpen(!open);
   };
 
+  // todo: colorise pic on hover https://stackoverflow.com/questions/29458666/emulate-photoshops-color-overlay-using-css-filters
+
   return (
     <article className='container-fluid mb-5 px-0'>
       <div className='row gx-0'>

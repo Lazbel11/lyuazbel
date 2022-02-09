@@ -1,16 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-
-@font-face {
-  font-family: 'Helvetica Thai Regular';
-  src: url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.eot');
-  src: url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.eot?#iefix') format('embedded-opentype'),
-    url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.woff2') format('woff2'),
-    url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.woff') format('woff'),
-    url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.ttf') format('truetype'),
-    url('//db.onlinewebfonts.com/t/d61000426b83bfff971ae049402eb870.svg#HelveticaTThaiW31-Regular') format('svg');
-}
 html {
-  font: 87.5%/1.1 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
+  font: 87.5%/1.1 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -25,7 +14,7 @@ html {
 }
 body {
   color: #303033;
-  font-family: 'Rubik', 'Lucida Grande', 'Geneva', 'Roboto', 'Arial', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
@@ -55,10 +44,10 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.2rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 h2 {
@@ -71,10 +60,10 @@ h2 {
   padding-top: 0;
   margin-bottom: 0.825rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 1.22371rem;
+  font-size: 1.27542rem;
   line-height: 1.1;
 }
 h3 {
@@ -87,10 +76,10 @@ h3 {
   padding-top: 0;
   margin-bottom: 0.825rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 1.14407rem;
+  font-size: 1.17608rem;
   line-height: 1.1;
 }
 h4 {
@@ -103,7 +92,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 0.825rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -119,10 +108,10 @@ h5 {
   padding-top: 0;
   margin-bottom: 0.825rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 0.93492rem;
+  font-size: 0.92211rem;
   line-height: 1.1;
 }
 h6 {
@@ -135,10 +124,10 @@ h6 {
   padding-top: 0;
   margin-bottom: 0.825rem;
   color: inherit;
-  font-family: 'Outfit', 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 0.90399rem;
+  font-size: 0.88547rem;
   line-height: 1.1;
 }
 hgroup {
