@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const primary = '#37f6ff80';
+const primary = '#9ce3f4';
 const background = '#18181b';
 const author = 'Lyu Azbel';
 const tagline = 'Public Health Research Scientist';
@@ -79,6 +79,7 @@ module.exports = {
           placeholder: `dominantColor`,
           quality: 50,
           breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: primary,
         },
       },
     },
