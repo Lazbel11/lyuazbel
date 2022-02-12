@@ -2,6 +2,25 @@
 @import 'variables';
 @import 'typography';
 
+h2 {
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 5);
+  }
+}
+
+h3 {
+  margin-bottom: map-get($spacers, 2);
+}
+
+p,
+li {
+  margin-bottom: map-get($spacers, 1);
+}
+
+h3 ~ p {
+  margin-bottom: map-get($spacers, 2);
+}
+
 a {
   color: $body-color;
   text-decoration: none;
@@ -133,13 +152,8 @@ $icon-font-size: 1.5rem;
 }
 
 #resume {
-  h2:not(:first-child) {
-    margin-top: map-get($spacers, 5);
-  }
-
   h3 {
     display: inline-block;
-    margin-bottom: map-get($spacers, 2);
 
     strong {
       font-family: $base-font-family;
