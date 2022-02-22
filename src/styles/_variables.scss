@@ -19,4 +19,4 @@ $footer-sm-height: 2rem + map-get($spacers, 3);
 $layout-lg-pt: map-get($spacers, 5);
 $navigation-height: $spacer * 3.93; // estimated from current setup in main.scss & Navigation.tsx
 
-$border-style: 3px solid $text-highlight-color;
+$border-style: 3px inset $text-highlight-color;

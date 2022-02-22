@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { Button, Collapse } from 'reactstrap';
-import { formatProjectDate, formatProjectTimeframe } from '../helpers';
+import { Collapse } from 'reactstrap';
+import { formatProjectDate } from '../helpers';
+import classNames from 'classnames';
 
 export default function Project({ project }) {
   const [open, setOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const toggle = () => {
     setOpen(!open);
@@ -13,21 +15,21 @@ export default function Project({ project }) {
   // todo: colorise pic on hover https://stackoverflow.com/questions/29458666/emulate-photoshops-color-overlay-using-css-filters
 
   return (
-    <article className='container-fluid mb-5 px-0'>
+    <article className='project container-fluid mb-5 px-0'>
       <div className='row gx-0'>
-        <div className='col-12 mb-3'>
-          <Button onClick={toggle} className='button p-0'>
+        <div className='col-12 mb-3' onMouseOver={(e) => setIsHovered(true)} onMouseOut={(e) => setIsHovered(false)}>
+          <button onClick={toggle} className='button p-0'>
             <GatsbyImage
               objectFit='cover'
               image={getImage(project.pictures[0])!}
               className='picture'
               alt='Project Image'
             />
-          </Button>
+          </button>
         </div>
         <div className='col'>
           <div className='mb-0'>
-            <h2 className='d-inline-block mb-2 me-2'>
+            <h2 className={classNames('d-inline-block mb-1 me-2', { active: isHovered })}>
               {!project.link ? (
                 project.title
               ) : (

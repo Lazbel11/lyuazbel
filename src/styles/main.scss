@@ -183,24 +183,32 @@ $icon-font-size: 1.5rem;
 }
 
 #projects {
-  .button {
-    border: none;
-    background: $real-primary;
-  }
-
-  .picture {
-    // min-width: 250px;
-    max-height: 400px;
-    transition: mix-blend-mode 0.4s ease;
-    mix-blend-mode: normal;
-
-    &:hover {
-      mix-blend-mode: luminosity;
+  .project {
+    .button {
+      border: none;
+      background: $real-primary;
     }
-  }
 
-  .institution {
-    font-style: italic;
+    .picture {
+      // min-width: 250px;
+      max-height: 400px;
+    }
+
+    h2 {
+      border-bottom: 3px inset $white;
+    }
+
+    h2.active {
+      border-bottom: $border-style;
+
+      a {
+        background-color: $text-highlight-color;
+      }
+    }
+
+    .institution {
+      font-style: italic;
+    }
   }
 }
 
