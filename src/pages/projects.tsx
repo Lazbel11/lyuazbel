@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/Layout';
 import Project from '../components/Project';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 export default function Projects({ data }) {
   const { allContentfulProject } = data;
@@ -11,9 +12,15 @@ export default function Projects({ data }) {
     <Layout seo={{ title: 'Projects' }}>
       <section id='projects'>
         <h1>Projects</h1>
-        {projects.map((project, i) => (
-          <Project key={i} project={project} />
-        ))}
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 720: 2 }}>
+          <Masonry gutter='1rem'>
+            {projects.map((project, i) => (
+              <div className='grid-item'>
+                <Project key={i} project={project} />
+              </div>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
       </section>
     </Layout>
   );

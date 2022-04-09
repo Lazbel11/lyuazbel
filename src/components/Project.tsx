@@ -15,7 +15,7 @@ export default function Project({ project }) {
   // todo: colorise pic on hover https://stackoverflow.com/questions/29458666/emulate-photoshops-color-overlay-using-css-filters
 
   return (
-    <article className='project container-fluid mb-5 px-0'>
+    <article className='project container-fluid mb-3 px-0'>
       <div className='row gx-0'>
         <div className='col-12 mb-3' onMouseOver={(e) => setIsHovered(true)} onMouseOut={(e) => setIsHovered(false)}>
           <button onClick={toggle} className='button p-0'>
@@ -28,17 +28,17 @@ export default function Project({ project }) {
           </button>
         </div>
         <div className='col'>
-          <div className='mb-0'>
-            <h2 className={classNames('d-inline-block mb-1 me-2', { active: isHovered })}>
+          <div className='mb-2'>
+            <h2 className={classNames('d-inline', { active: isHovered })}>
               {!project.link ? (
                 project.title
               ) : (
                 <a href={project.link} about='_blank' rel='noreferrer noopener'>
                   {project.title}
                 </a>
-              )}{' '}
+              )}
             </h2>
-            <span className='text-nowrap'>{formatProjectDate(project.endDate)}</span>
+            <span className='text-nowrap ms-2'>{formatProjectDate(project.endDate)}</span>
           </div>
           <Collapse isOpen={open}>
             <p className='institution mb-2'>{project.institution}</p>
