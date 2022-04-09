@@ -15,7 +15,7 @@ const baseFontColor = '#303033';
 const typography = new Typography({
   baseFontSize,
   baseLineHeight,
-  scaleRatio: 1.5,
+  scaleRatio: 1.6,
   headerFontFamily,
   bodyFontFamily: baseFontFamily,
   headerWeight: headerFontWeight,

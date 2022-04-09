@@ -43,9 +43,11 @@ export default function Publications({ data }) {
     );
   };
 
+  const pageTitle = 'Selected Publications';
+
   return (
-    <Layout seo={{ title: 'Publications' }}>
-      <h1>Publications</h1>
+    <Layout seo={{ title: pageTitle }}>
+      <h1>{pageTitle}</h1>
       <article id='publications'>
         {sections.map((id) => {
           if (id === massMediaKey && publicationsByCategory[massMediaKey].length < 3) {
