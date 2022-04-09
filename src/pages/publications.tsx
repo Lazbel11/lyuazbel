@@ -24,7 +24,7 @@ export default function Publications({ data }) {
       <li className='mb-3'>
         <div className='mb-2'>
           <a href={pub.link} about='_blank' rel='noreferrer noopener' className='title me-1'>
-            <h3 className='d-inline'>{pub.title}</h3>
+            <h3 className='d-inline'>{pub.title.trim()}</h3>
           </a>
           <span className='publication text-nowrap me-1'>{pub.publicationName}</span>
           <span className='date'>{new Date(pub.date).getFullYear()}</span>

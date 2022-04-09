@@ -31,10 +31,10 @@ export default function Project({ project }) {
           <div className='mb-2'>
             <h2 className={classNames('d-inline', { active: isHovered })}>
               {!project.link ? (
-                project.title
+                project.title.trim()
               ) : (
                 <a href={project.link} about='_blank' rel='noreferrer noopener'>
-                  {project.title}
+                  {project.title.trim()}
                 </a>
               )}
             </h2>
