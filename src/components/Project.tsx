@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Collapse } from 'reactstrap';
-import { formatProjectDate } from '../helpers';
+import { formatProjectTimeframe } from '../helpers';
 import classNames from 'classnames';
 
 export default function Project({ project }) {
@@ -38,7 +38,8 @@ export default function Project({ project }) {
                 </a>
               )}
             </h2>
-            <span className='text-nowrap ms-2'>{formatProjectDate(project.endDate)}</span>
+            <span className='ms-2'>&middot;</span>
+            <span className='text-nowrap ms-2'>{formatProjectTimeframe(project.startDate, project.endDate)}</span>
           </div>
           <Collapse isOpen={open}>
             <p className='institution mb-2'>{project.institution}</p>
