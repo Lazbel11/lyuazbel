@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 export default function Resume({ data }) {
   const { about, education } = data;
-  const [resume] = education.edges.map(({ node }) => node.pageText.childMarkdownRemark);
+  const resume = education.pageText.childMarkdownRemark;
 
   return (
     <Layout seo={{ title: 'CV' }}>
@@ -26,14 +26,10 @@ export const query = graphql`
     about: contentfulAbout {
       tagline
     }
-    education: allContentfulEducation {
-      edges {
-        node {
-          pageText {
-            childMarkdownRemark {
-              html
-            }
-          }
+    education: contentfulEducation {
+      pageText {
+        childMarkdownRemark {
+          html
         }
       }
     }
