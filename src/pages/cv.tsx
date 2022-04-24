@@ -26,7 +26,7 @@ export const query = graphql`
     about: contentfulAbout {
       tagline
     }
-    education: contentfulEducation {
+    education: contentfulCv {
       pageText {
         childMarkdownRemark {
           html
