@@ -163,8 +163,18 @@ $icon-font-size: 1.5rem;
     }
   }
 
+  $ul-spacer: map-get($spacers, 3);
+
+  ul {
+    margin: 0 0 $ul-spacer $ul-spacer;
+  }
   ul {
     list-style-type: none;
+  }
+  ul > li:before {
+    content: '\2022';
+    position: absolute;
+    margin-left: -$ul-spacer;
   }
 }
 
