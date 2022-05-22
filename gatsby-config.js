@@ -47,12 +47,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/config/typography`,
-      },
-    },
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
     {
