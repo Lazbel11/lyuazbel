@@ -48,7 +48,7 @@
     "@typescript-eslint/parser": "^5.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "gatsby-plugin-sass": "^5.14.0",
+    "gatsby-plugin-sass": "^5.18.0",
     "sass": ">=1.52.1"
   }
 }
